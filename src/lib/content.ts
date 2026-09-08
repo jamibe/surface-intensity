@@ -30,7 +30,7 @@ type P3 = Record<FullLocale, string[]>;
 export const ui: Record<FullLocale, Record<string, string>> = {
   it: {
     archive: "Archivio",
-    game: "Gioco",
+    autografia: "Autografia di un gesto",
     contact: "Contatto",
     threshold: "Soglia d'ingresso",
     doors: "Le porte dell'archivio",
@@ -43,7 +43,7 @@ export const ui: Record<FullLocale, Record<string, string>> = {
   },
   en: {
     archive: "Archive",
-    game: "Play",
+    autografia: "Autograph of a gesture",
     contact: "Contact",
     threshold: "Threshold",
     doors: "The doors of the archive",
@@ -56,7 +56,7 @@ export const ui: Record<FullLocale, Record<string, string>> = {
   },
   es: {
     archive: "Archivo",
-    game: "Juego",
+    autografia: "Autografía de un gesto",
     contact: "Contacto",
     threshold: "Umbral",
     doors: "Las puertas del archivo",

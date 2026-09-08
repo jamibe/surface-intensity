@@ -12,6 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LangRouteImport } from './routes/$lang'
 import { Route as LangIndexRouteImport } from './routes/$lang.index'
+import { Route as LangAutografiaRouteImport } from './routes/$lang.autografia'
+import { Route as LangContattoRouteImport } from './routes/$lang.contatto'
 import { Route as LangScrittiSlugRouteImport } from './routes/$lang.scritti.$slug'
 import { Route as LangTemaTemaRouteImport } from './routes/$lang.tema.$tema'
 
@@ -30,6 +32,16 @@ const LangIndexRoute = LangIndexRouteImport.update({
   path: '/',
   getParentRoute: () => LangRoute,
 } as any)
+const LangAutografiaRoute = LangAutografiaRouteImport.update({
+  id: '/autografia',
+  path: '/autografia',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangContattoRoute = LangContattoRouteImport.update({
+  id: '/contatto',
+  path: '/contatto',
+  getParentRoute: () => LangRoute,
+} as any)
 const LangScrittiSlugRoute = LangScrittiSlugRouteImport.update({
   id: '/scritti/$slug',
   path: '/scritti/$slug',
@@ -44,12 +56,16 @@ const LangTemaTemaRoute = LangTemaTemaRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteWithChildren
+  '/$lang/autografia': typeof LangAutografiaRoute
+  '/$lang/contatto': typeof LangContattoRoute
   '/$lang/': typeof LangIndexRoute
   '/$lang/scritti/$slug': typeof LangScrittiSlugRoute
   '/$lang/tema/$tema': typeof LangTemaTemaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$lang/autografia': typeof LangAutografiaRoute
+  '/$lang/contatto': typeof LangContattoRoute
   '/$lang': typeof LangIndexRoute
   '/$lang/scritti/$slug': typeof LangScrittiSlugRoute
   '/$lang/tema/$tema': typeof LangTemaTemaRoute
@@ -58,6 +74,8 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteWithChildren
+  '/$lang/autografia': typeof LangAutografiaRoute
+  '/$lang/contatto': typeof LangContattoRoute
   '/$lang/': typeof LangIndexRoute
   '/$lang/scritti/$slug': typeof LangScrittiSlugRoute
   '/$lang/tema/$tema': typeof LangTemaTemaRoute
@@ -65,13 +83,27 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/$lang' | '/$lang/' | '/$lang/scritti/$slug' | '/$lang/tema/$tema'
+    | '/'
+    | '/$lang'
+    | '/$lang/autografia'
+    | '/$lang/contatto'
+    | '/$lang/'
+    | '/$lang/scritti/$slug'
+    | '/$lang/tema/$tema'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$lang' | '/$lang/scritti/$slug' | '/$lang/tema/$tema'
+  to:
+    | '/'
+    | '/$lang/autografia'
+    | '/$lang/contatto'
+    | '/$lang'
+    | '/$lang/scritti/$slug'
+    | '/$lang/tema/$tema'
   id:
     | '__root__'
     | '/'
     | '/$lang'
+    | '/$lang/autografia'
+    | '/$lang/contatto'
     | '/$lang/'
     | '/$lang/scritti/$slug'
     | '/$lang/tema/$tema'
@@ -105,6 +137,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangIndexRouteImport
       parentRoute: typeof LangRoute
     }
+    '/$lang/autografia': {
+      id: '/$lang/autografia'
+      path: '/autografia'
+      fullPath: '/$lang/autografia'
+      preLoaderRoute: typeof LangAutografiaRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/contatto': {
+      id: '/$lang/contatto'
+      path: '/contatto'
+      fullPath: '/$lang/contatto'
+      preLoaderRoute: typeof LangContattoRouteImport
+      parentRoute: typeof LangRoute
+    }
     '/$lang/scritti/$slug': {
       id: '/$lang/scritti/$slug'
       path: '/scritti/$slug'
@@ -123,12 +169,16 @@ declare module '@tanstack/react-router' {
 }
 
 interface LangRouteChildren {
+  LangAutografiaRoute: typeof LangAutografiaRoute
+  LangContattoRoute: typeof LangContattoRoute
   LangIndexRoute: typeof LangIndexRoute
   LangScrittiSlugRoute: typeof LangScrittiSlugRoute
   LangTemaTemaRoute: typeof LangTemaTemaRoute
 }
 
 const LangRouteChildren: LangRouteChildren = {
+  LangAutografiaRoute: LangAutografiaRoute,
+  LangContattoRoute: LangContattoRoute,
   LangIndexRoute: LangIndexRoute,
   LangScrittiSlugRoute: LangScrittiSlugRoute,
   LangTemaTemaRoute: LangTemaTemaRoute,

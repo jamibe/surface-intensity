@@ -165,11 +165,15 @@ export const themes: Theme[] = [
   },
 ];
 
-export const gameDoor = {
+export const autografiaDoor = {
   image: gioco,
   width: 1024,
   height: 1280,
-  name: { it: "Gioco", en: "Play", es: "Juego" } as T3,
+  name: {
+    it: "Autografia di un gesto",
+    en: "Autograph of a gesture",
+    es: "Autografía de un gesto",
+  } as T3,
 };
 
 /* ------------------------------------------------------------- Texts ---- */
@@ -329,60 +333,47 @@ export const texts: Text[] = [
 
 export const textsByTheme = (theme: ThemeSlug) => texts.filter((t) => t.theme === theme);
 
-/* -------------------------------------------------------------- Game ---- */
+/* ------------------------------------------------- Autografia di un gesto ---- */
 
-export const game: Record<FullLocale, { title: string; lead: string; caption: string }> = {
+export const autografia: Record<
+  FullLocale,
+  { kicker: string; title: string; lead: string; body: string[]; close: string }
+> = {
   it: {
-    title: "Linee di lettura",
-    lead: "Le stelle non formano figure: qualcuno le ha unite. Passa sopra il cielo e le linee possibili si accendono. Sono modi di attraversare l'archivio, nessuno più giusto degli altri.",
-    caption: "Ogni punto è uno scritto. Ogni linea, un ordine di lettura.",
-  },
-  en: {
-    title: "Reading lines",
-    lead: "Stars do not form figures: someone joined them. Move over the sky and the possible lines light up. They are ways of crossing the archive, none more correct than the others.",
-    caption: "Each point is a text. Each line, an order of reading.",
-  },
-  es: {
-    title: "Líneas de lectura",
-    lead: "Las estrellas no forman figuras: alguien las unió. Pasa sobre el cielo y las líneas posibles se encienden. Son maneras de atravesar el archivo, ninguna más correcta que las otras.",
-    caption: "Cada punto es un escrito. Cada línea, un orden de lectura.",
-  },
-};
-
-/* --------------------------------------------------------------- Room ---- */
-
-export const room: Record<FullLocale, { kicker: string; title: string; body: string[] }> = {
-  it: {
-    kicker: "La stanza",
-    title: "Lavorare su una linea",
+    kicker: "Autografia di un gesto",
+    title: "Un gesto che accade una volta",
+    lead: "Non una firma che lasci sulla roccia. Un evento che accade fra te e lei, e che poteva anche non accadere.",
     body: [
-      "Non è un pacchetto e non è un percorso. È un lavoro su un corpo alla volta: come si distribuisce il peso, come si guarda una sequenza prima di toccarla, cosa succede alla respirazione quando la difficoltà sale.",
+      "Non è un pacchetto e non è un programma. È un lavoro su un corpo alla volta: come si distribuisce il peso, come si legge una sequenza prima di toccarla, cosa succede al respiro quando la difficoltà sale.",
       "Serve tempo e serve disponibilità a rifare le cose facili. Chi cerca un metodo rapido non troverà niente di utile qui.",
       "Traccio anche linee, in falesia e in palestra, per chi vuole un blocco costruito su una domanda precisa.",
-      "Si comincia scrivendo due righe: dove sei adesso, da quanto, cosa ti si blocca.",
     ],
+    close: "Si comincia scrivendo due righe: dove sei adesso, da quanto, cosa ti si blocca.",
   },
   en: {
-    kicker: "The room",
-    title: "Working on a line",
+    kicker: "Autograph of a gesture",
+    title: "A gesture that happens once",
+    lead: "Not a signature you leave on the rock. An event that happens between you and it, and that could just as well not have happened.",
     body: [
       "It is not a package and not a program. It is work on one body at a time: how weight is distributed, how a sequence is read before touching it, what happens to breathing when difficulty rises.",
       "It takes time and a willingness to redo easy things. Anyone looking for a fast method will find nothing useful here.",
       "I also set lines, outdoors and indoors, for people who want a problem built around a precise question.",
-      "It starts by writing a few lines: where you are now, for how long, what stops you.",
     ],
+    close: "It starts by writing a few lines: where you are now, for how long, what stops you.",
   },
   es: {
-    kicker: "La sala",
-    title: "Trabajar sobre una línea",
+    kicker: "Autografía de un gesto",
+    title: "Un gesto que sucede una vez",
+    lead: "No una firma que dejas en la roca. Un acontecimiento que sucede entre tú y ella, y que bien podría no haber sucedido.",
     body: [
       "No es un paquete ni un programa. Es un trabajo sobre un cuerpo cada vez: cómo se reparte el peso, cómo se lee una secuencia antes de tocarla, qué le pasa a la respiración cuando sube la dificultad.",
       "Requiere tiempo y disposición a repetir lo fácil. Quien busque un método rápido no encontrará nada útil aquí.",
       "También equipo líneas, en roca y en rocódromo, para quien quiere un bloque construido sobre una pregunta precisa.",
-      "Se empieza escribiendo dos líneas: dónde estás ahora, desde cuándo, qué se te bloquea.",
     ],
+    close: "Se empieza escribiendo dos líneas: dónde estás ahora, desde cuándo, qué se te bloquea.",
   },
 };
+
 
 export const contact: Record<FullLocale, { title: string; body: string; hint: string }> = {
   it: {

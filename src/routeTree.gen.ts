@@ -11,6 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LangRouteImport } from './routes/$lang'
+import { Route as LangIndexRouteImport } from './routes/$lang.index'
+import { Route as LangScrittiSlugRouteImport } from './routes/$lang.scritti.$slug'
+import { Route as LangTemaTemaRouteImport } from './routes/$lang.tema.$tema'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +25,61 @@ const LangRoute = LangRouteImport.update({
   path: '/$lang',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LangIndexRoute = LangIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangScrittiSlugRoute = LangScrittiSlugRouteImport.update({
+  id: '/scritti/$slug',
+  path: '/scritti/$slug',
+  getParentRoute: () => LangRoute,
+} as any)
+const LangTemaTemaRoute = LangTemaTemaRouteImport.update({
+  id: '/tema/$tema',
+  path: '/tema/$tema',
+  getParentRoute: () => LangRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/$lang': typeof LangRoute
+  '/$lang': typeof LangRouteWithChildren
+  '/$lang/': typeof LangIndexRoute
+  '/$lang/scritti/$slug': typeof LangScrittiSlugRoute
+  '/$lang/tema/$tema': typeof LangTemaTemaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/$lang': typeof LangRoute
+  '/$lang': typeof LangIndexRoute
+  '/$lang/scritti/$slug': typeof LangScrittiSlugRoute
+  '/$lang/tema/$tema': typeof LangTemaTemaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/$lang': typeof LangRoute
+  '/$lang': typeof LangRouteWithChildren
+  '/$lang/': typeof LangIndexRoute
+  '/$lang/scritti/$slug': typeof LangScrittiSlugRoute
+  '/$lang/tema/$tema': typeof LangTemaTemaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$lang'
+  fullPaths:
+    '/' | '/$lang' | '/$lang/' | '/$lang/scritti/$slug' | '/$lang/tema/$tema'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$lang'
-  id: '__root__' | '/' | '/$lang'
+  to: '/' | '/$lang' | '/$lang/scritti/$slug' | '/$lang/tema/$tema'
+  id:
+    | '__root__'
+    | '/'
+    | '/$lang'
+    | '/$lang/'
+    | '/$lang/scritti/$slug'
+    | '/$lang/tema/$tema'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  LangRoute: typeof LangRoute
+  LangRoute: typeof LangRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +98,47 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$lang/': {
+      id: '/$lang/'
+      path: '/'
+      fullPath: '/$lang/'
+      preLoaderRoute: typeof LangIndexRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/scritti/$slug': {
+      id: '/$lang/scritti/$slug'
+      path: '/scritti/$slug'
+      fullPath: '/$lang/scritti/$slug'
+      preLoaderRoute: typeof LangScrittiSlugRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/tema/$tema': {
+      id: '/$lang/tema/$tema'
+      path: '/tema/$tema'
+      fullPath: '/$lang/tema/$tema'
+      preLoaderRoute: typeof LangTemaTemaRouteImport
+      parentRoute: typeof LangRoute
+    }
   }
 }
 
+interface LangRouteChildren {
+  LangIndexRoute: typeof LangIndexRoute
+  LangScrittiSlugRoute: typeof LangScrittiSlugRoute
+  LangTemaTemaRoute: typeof LangTemaTemaRoute
+}
+
+const LangRouteChildren: LangRouteChildren = {
+  LangIndexRoute: LangIndexRoute,
+  LangScrittiSlugRoute: LangScrittiSlugRoute,
+  LangTemaTemaRoute: LangTemaTemaRoute,
+}
+
+const LangRouteWithChildren = LangRoute._addFileChildren(LangRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  LangRoute: LangRoute,
+  LangRoute: LangRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

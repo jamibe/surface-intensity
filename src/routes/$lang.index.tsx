@@ -14,9 +14,10 @@ import { SiteFooter } from "@/components/site";
 export const Route = createFileRoute("/$lang/")({
   head: ({ params }) => {
     const lang = params.lang;
-    const full = isFullLocale(lang) ? (lang as FullLocale) : "it";
-    const title = `Ilinx — ${home[full].title}`;
-    const description = home[full].lead;
+    const title = "Ilinx — arrampicata, scritti, tracciatura";
+    const description = isFullLocale(lang)
+      ? "Un archivio visivo di scritti sull'arrampicata, il gesto e la superficie."
+      : "Ilinx — climbing, writing and route setting.";
     return {
       meta: [
         { title },
@@ -60,23 +61,9 @@ function ShortPage({ lang }: { lang: "zh" | "ja" }) {
 }
 
 function FullHome({ lang }: { lang: FullLocale }) {
-  const t = ui[lang];
-  const h = home[lang];
-
   return (
     <main>
-      <section className="sfumato">
-        <div className="mx-auto max-w-[1180px] px-6 pt-24 pb-20">
-          <h1 className="max-w-[15ch] text-6xl leading-[0.95] tracking-tight text-balance md:text-8xl">
-            {h.title}
-          </h1>
-          <p className="mt-10 max-w-[48ch] text-xl leading-relaxed text-pretty text-muted-foreground">
-            {h.lead}
-          </p>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-[1400px] px-6 py-16">
+      <section className="mx-auto max-w-[1600px] px-3 py-3 md:px-6 md:py-6">
         <div className="flex flex-col gap-6">
           {themes.map((theme) => (
             <Door
@@ -91,28 +78,26 @@ function FullHome({ lang }: { lang: FullLocale }) {
               kind={theme.door}
             />
           ))}
-          <Door
-            to="/$lang/autografia"
-            params={{ lang }}
-            image={autografiaDoor.image}
-            width={autografiaDoor.width}
-            height={autografiaDoor.height}
-            name={autografiaDoor.name[lang]}
-            note={t.enter}
-            kind="stars"
-          />
         </div>
       </section>
 
-      <section className="border-t border-border">
-        <div className="mx-auto max-w-[62ch] px-6 py-24">
-          {h.body.map((p, i) => (
-            <p key={i} className="mb-6 text-[17px] leading-[1.75] text-pretty last:mb-0">
-              {p}
-            </p>
-          ))}
-        </div>
-      </section>
+      <Link
+        to="/$lang/autografia"
+        params={{ lang }}
+        aria-label={autografiaDoor.name[lang]}
+        className="group relative mx-auto my-24 block h-20 w-20 overflow-hidden rounded-full opacity-[0.12] transition-all duration-700 hover:h-28 hover:w-28 hover:opacity-70 focus-visible:h-28 focus-visible:w-28 focus-visible:opacity-70"
+      >
+        <img
+          src={autografiaDoor.image}
+          alt=""
+          width={autografiaDoor.width}
+          height={autografiaDoor.height}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <span className="streak-line absolute top-1/2 left-0" />
+        <span className="sr-only">{autografiaDoor.name[lang]}</span>
+      </Link>
 
       <SiteFooter lang={lang} />
     </main>
@@ -127,7 +112,7 @@ type DoorProps = {
   height: number;
   name: string;
   note: string;
-  kind: "sky" | "canopy" | "rain" | "stars";
+  kind: "sky" | "canopy" | "water" | "rain" | "stars";
 };
 
 function Door({ to, params, image, width, height, name, note, kind }: DoorProps) {

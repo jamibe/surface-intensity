@@ -30,6 +30,7 @@ type P3 = Record<FullLocale, string[]>;
 
 type UiCopy = {
   archive: string;
+  about: string;
   autografia: string;
   contact: string;
   threshold: string;
@@ -45,6 +46,7 @@ type UiCopy = {
 export const ui: Record<FullLocale, UiCopy> = {
   it: {
     archive: "Archivio",
+    about: "Chi sono",
     autografia: "Autografia di un gesto",
     contact: "Contatto",
     threshold: "Soglia d'ingresso",
@@ -58,6 +60,7 @@ export const ui: Record<FullLocale, UiCopy> = {
   },
   en: {
     archive: "Archive",
+    about: "About",
     autografia: "Autograph of a gesture",
     contact: "Contact",
     threshold: "Threshold",
@@ -71,6 +74,7 @@ export const ui: Record<FullLocale, UiCopy> = {
   },
   es: {
     archive: "Archivo",
+    about: "Quién soy",
     autografia: "Autografía de un gesto",
     contact: "Contacto",
     threshold: "Umbral",
@@ -88,30 +92,30 @@ export const ui: Record<FullLocale, UiCopy> = {
 
 export const home: Record<FullLocale, { title: string; lead: string; body: string[] }> = {
   it: {
-    title: "L'acqua risponde al contatto.",
-    lead: "Non si entra qui: si appoggia un dito sulla superficie e si guarda cosa succede. Scritti, immagini, un cielo di segni. E una stanza più silenziosa, che si trova soltanto cercandola.",
+    title: "Ilinx",
+    lead: "Un archivio di pratiche, immagini e scritti sull'arrampicata.",
     body: [
-      "La roccia non insegna niente. Sta lì da prima di noi e resterà dopo, indifferente. Ma l'incontro fra un corpo e una parete produce qualcosa che prima non c'era: un gesto che accade una volta, e che poteva benissimo non accadere.",
-      "Scrivo di questo. Non di cosa la montagna rivela su di me — quella è psicologia con la vernice buona. Di come una sequenza si forma, di come una mano decide prima della testa, di cosa resta addosso quando si scende.",
-      "Più avanti, senza rumore, c'è un modo di lavorare insieme su una linea. Non è in cima alla pagina e non ha un pulsante.",
+      "L'arrampicata compone un campo fra corpo, roccia, gravità e ambiente.",
+      "Gli scritti osservano le variazioni che avvengono in questo campo.",
+      "Autografia di un gesto è il lavoro condiviso che può nascere da questa pratica.",
     ],
   },
   en: {
-    title: "Water answers the touch.",
-    lead: "You don't enter here: you rest a finger on the surface and watch what happens. Writings, images, a sky of marks. And a quieter room, found only by looking for it.",
+    title: "Ilinx",
+    lead: "An archive of practices, images and writings on climbing.",
     body: [
-      "Rock teaches nothing. It was here before us and will stay after, indifferent. But the meeting of a body and a wall produces something that wasn't there before: a gesture that happens once, and could easily not have happened.",
-      "That is what I write about. Not what the mountain reveals about me — that is psychology with a good coat of varnish. About how a sequence forms, how a hand decides ahead of the head, what stays on the skin once you're down.",
-      "Further on, without noise, there is a way of working together on a line. It is not at the top of the page and it has no button.",
+      "Climbing composes a field between body, rock, gravity and environment.",
+      "The writings observe the variations that occur within this field.",
+      "Autograph of a gesture is the shared work that can emerge from this practice.",
     ],
   },
   es: {
-    title: "El agua responde al contacto.",
-    lead: "Aquí no se entra: se apoya un dedo en la superficie y se mira qué ocurre. Escritos, imágenes, un cielo de señales. Y una sala más silenciosa, que sólo se encuentra buscándola.",
+    title: "Ilinx",
+    lead: "Un archivo de prácticas, imágenes y escritos sobre la escalada.",
     body: [
-      "La roca no enseña nada. Estaba antes que nosotros y seguirá después, indiferente. Pero el encuentro entre un cuerpo y una pared produce algo que antes no existía: un gesto que sucede una vez, y que bien podría no haber sucedido.",
-      "De eso escribo. No de lo que la montaña revela sobre mí — eso es psicología con buen barniz. De cómo se forma una secuencia, de cómo una mano decide antes que la cabeza, de qué queda en la piel al bajar.",
-      "Más adelante, sin ruido, hay una manera de trabajar juntos sobre una línea. No está arriba en la página y no tiene un botón.",
+      "La escalada compone un campo entre cuerpo, roca, gravedad y entorno.",
+      "Los escritos observan las variaciones que ocurren dentro de este campo.",
+      "Autografía de un gesto es el trabajo compartido que puede surgir de esta práctica.",
     ],
   },
 };
@@ -143,9 +147,9 @@ export const themes: Theme[] = [
     ratio: "aspect-[4/5]",
     name: { it: "Cielo", en: "Sky", es: "Cielo" },
     note: {
-      it: "Aria, esposizione, la parte del corpo che sta fuori.",
-      en: "Air, exposure, the part of the body that stays outside.",
-      es: "Aire, exposición, la parte del cuerpo que queda fuera.",
+      it: "Esposizione, orientamento, variazioni del campo percettivo.",
+      en: "Exposure, orientation, variations in the perceptual field.",
+      es: "Exposición, orientación, variaciones del campo perceptivo.",
     },
   },
   {
@@ -158,9 +162,9 @@ export const themes: Theme[] = [
     ratio: "aspect-[16/10]",
     name: { it: "Chioma", en: "Canopy", es: "Copa" },
     note: {
-      it: "Movimento laterale, respiro, quello che si impara ballando.",
-      en: "Lateral movement, breath, what you learn by dancing.",
-      es: "Movimiento lateral, respiración, lo que se aprende bailando.",
+      it: "Respiro, ritmo e variazione del gesto.",
+      en: "Breath, rhythm and variation of gesture.",
+      es: "Respiración, ritmo y variación del gesto.",
     },
   },
   {
@@ -173,9 +177,9 @@ export const themes: Theme[] = [
     ratio: "aspect-[16/10]",
     name: { it: "Mare", en: "Sea", es: "Mar" },
     note: {
-      it: "Il perimetro fra roccia e acqua, esteso fino all'orizzonte.",
-      en: "The perimeter between rock and water, extending to the horizon.",
-      es: "El perímetro entre roca y agua, extendido hasta el horizonte.",
+      it: "La soglia mobile fra roccia, acqua e orizzonte.",
+      en: "The moving threshold between rock, water and horizon.",
+      es: "El umbral móvil entre roca, agua y horizonte.",
     },
   },
   {
@@ -188,9 +192,9 @@ export const themes: Theme[] = [
     ratio: "aspect-[16/10]",
     name: { it: "Roccia", en: "Rock", es: "Roca" },
     note: {
-      it: "La superficie che decide i passi. Attrito, pioggia, attesa.",
-      en: "The surface that decides the moves. Friction, rain, waiting.",
-      es: "La superficie que decide los pasos. Fricción, lluvia, espera.",
+      it: "Attrito, regole locali e possibilità di movimento.",
+      en: "Friction, local rules and possibilities of movement.",
+      es: "Fricción, reglas locales y posibilidades de movimiento.",
     },
   },
 ];
@@ -224,19 +228,19 @@ export const texts: Text[] = [
     title: { it: "Il gorgo", en: "The whirl", es: "El remolino" },
     body: {
       it: [
-        "La mano che entra in acqua non rompe niente: l'increspatura si allarga da sola e torna in silenzio alla superficie. Il gorgo non è un buco, è un modo che ha l'acqua di restare acqua mentre gira.",
-        "In parete succede lo stesso. Il corpo si sbilancia verso una superficie che non è fatta per essere verticale, e per un istante l'equilibrio non è né perso né trovato: gira. È lì che si sta, il più a lungo possibile.",
-        "Chi arrampica per arrivare in cima passa in quel punto senza vederlo. Non è un errore. È solo un'altra pratica.",
+        "Caillois chiama ilinx i giochi che producono vertigine e modificano temporaneamente la percezione stabile.",
+        "In parete l'equilibrio non è una posizione da conservare. Varia mentre cambiano gli appoggi, la gravità e l'orientamento del corpo.",
+        "Il gesto emerge da questo insieme di relazioni. La salita è una delle sue possibili composizioni.",
       ],
       en: [
-        "The hand entering water breaks nothing: the ripple widens on its own and returns quietly to the surface. A whirl is not a hole; it is water's way of staying water while it turns.",
-        "The same happens on a wall. The body tips toward a surface not made to be vertical, and for an instant balance is neither lost nor found: it turns. That is where you stay, as long as you can.",
-        "Whoever climbs to reach the top passes through that point without seeing it. Not a mistake. Just another practice.",
+        "Caillois calls ilinx the games that produce vertigo and temporarily alter stable perception.",
+        "On a wall, balance is not a position to preserve. It varies as holds, gravity and bodily orientation change.",
+        "The gesture emerges from this set of relations. The ascent is one of its possible compositions.",
       ],
       es: [
-        "La mano que entra en el agua no rompe nada: la onda se abre sola y vuelve en silencio a la superficie. El remolino no es un agujero, es la manera que tiene el agua de seguir siendo agua mientras gira.",
-        "En la pared ocurre lo mismo. El cuerpo se desequilibra hacia una superficie que no está hecha para ser vertical, y por un instante el equilibrio no está ni perdido ni encontrado: gira. Ahí se está, lo más posible.",
-        "Quien escala para llegar arriba pasa por ese punto sin verlo. No es un error. Es otra práctica.",
+        "Caillois llama ilinx a los juegos que producen vértigo y modifican temporalmente la percepción estable.",
+        "En la pared el equilibrio no es una posición que conservar. Varía al cambiar los apoyos, la gravedad y la orientación del cuerpo.",
+        "El gesto surge de este conjunto de relaciones. El ascenso es una de sus posibles composiciones.",
       ],
     },
   },
@@ -247,19 +251,19 @@ export const texts: Text[] = [
     title: { it: "Esposizione", en: "Exposure", es: "Exposición" },
     body: {
       it: [
-        "Il vuoto sotto non è una misura, è una temperatura. Cambia il modo in cui le dita si chiudono, non la loro forza.",
-        "Su una via lunga arriva sempre il momento in cui il paesaggio smette di essere sfondo e diventa parte del movimento. Da lì in poi si arrampica anche col campo visivo.",
-        "Non c'è niente da vincere. C'è da restare presenti in una condizione che il corpo, ragionevolmente, vorrebbe interrompere.",
+        "L'esposizione modifica il campo percettivo. Distanza, profondità e rumore entrano nell'organizzazione del gesto.",
+        "Il paesaggio non resta sullo sfondo: partecipa al concatenamento fra sguardo, presa, appoggio e respiro.",
+        "La pratica consiste nel riconoscere questa variazione senza ridurla a un ostacolo da vincere.",
       ],
       en: [
-        "The void below is not a measure, it is a temperature. It changes the way fingers close, not their strength.",
-        "On a long route there always comes a moment when the landscape stops being background and becomes part of the movement. From then on you climb with the visual field too.",
-        "There is nothing to win. There is staying present in a condition the body, reasonably, would like to end.",
+        "Exposure modifies the perceptual field. Distance, depth and sound enter the organisation of gesture.",
+        "The landscape does not remain in the background: it takes part in the assemblage of gaze, hold, foothold and breath.",
+        "Practice means recognising this variation without reducing it to an obstacle to overcome.",
       ],
       es: [
-        "El vacío de abajo no es una medida, es una temperatura. Cambia el modo en que los dedos se cierran, no su fuerza.",
-        "En una vía larga siempre llega el momento en que el paisaje deja de ser fondo y pasa a formar parte del movimiento. Desde ahí se escala también con el campo visual.",
-        "No hay nada que ganar. Hay que permanecer presente en una condición que el cuerpo, razonablemente, querría interrumpir.",
+        "La exposición modifica el campo perceptivo. Distancia, profundidad y sonido entran en la organización del gesto.",
+        "El paisaje no queda en segundo plano: participa en el agenciamiento entre mirada, presa, apoyo y respiración.",
+        "La práctica consiste en reconocer esta variación sin reducirla a un obstáculo que vencer.",
       ],
     },
   },
@@ -274,19 +278,19 @@ export const texts: Text[] = [
     },
     body: {
       it: [
-        "Quando una sequenza funziona, la decisione non arriva dalla testa. La mano è già altrove e il pensiero la raggiunge dopo, per confermare.",
-        "Questo non è istinto. È memoria distribuita: anni di peso spostato, di appoggi cercati con la pianta del piede, di cadute assorbite. Il corpo conserva molto più di quanto sappia raccontare.",
-        "Allenare vuol dire allargare quel repertorio, non irrigidirlo. Un movimento imparato male è un movimento che chiede sempre il permesso.",
+        "In una sequenza conosciuta, la decisione può precedere la sua rappresentazione cosciente.",
+        "Non è istinto. È una memoria distribuita fra appoggi, peso, sguardo e ripetizioni accumulate.",
+        "Allenare significa aumentare le variazioni disponibili, non fissare un solo modello di movimento.",
       ],
       en: [
-        "When a sequence works, the decision does not come from the head. The hand is already elsewhere and thought catches up afterwards, to confirm.",
-        "This is not instinct. It is distributed memory: years of shifted weight, of footholds searched with the sole, of absorbed falls. The body keeps far more than it can narrate.",
-        "Training means widening that repertoire, not stiffening it. A badly learned movement is a movement that always asks permission.",
+        "In a familiar sequence, a decision may precede its conscious representation.",
+        "This is not instinct. It is memory distributed across footholds, weight, gaze and accumulated repetitions.",
+        "Training means increasing the available variations, not fixing a single model of movement.",
       ],
       es: [
-        "Cuando una secuencia funciona, la decisión no llega de la cabeza. La mano ya está en otro sitio y el pensamiento la alcanza después, para confirmar.",
-        "No es instinto. Es memoria distribuida: años de peso desplazado, de apoyos buscados con la planta del pie, de caídas absorbidas. El cuerpo guarda mucho más de lo que sabe contar.",
-        "Entrenar es ampliar ese repertorio, no endurecerlo. Un movimiento mal aprendido es un movimiento que siempre pide permiso.",
+        "En una secuencia conocida, la decisión puede preceder a su representación consciente.",
+        "No es instinto. Es una memoria distribuida entre apoyos, peso, mirada y repeticiones acumuladas.",
+        "Entrenar significa aumentar las variaciones disponibles, no fijar un único modelo de movimiento.",
       ],
     },
   },
@@ -297,65 +301,111 @@ export const texts: Text[] = [
     title: { it: "Respiro laterale", en: "Lateral breath", es: "Respiración lateral" },
     body: {
       it: [
-        "Quasi tutti trattengono il fiato nei passaggi duri. Poi si stupiscono che le braccia si chiudano.",
-        "Il respiro non serve a rilassarsi: serve a tenere aperta la possibilità di cambiare idea a metà movimento. Un corpo in apnea ha già scelto, e da lì può solo tirare.",
-        "Le cose che mi hanno insegnato di più sull'arrampicata sono successe fuori dall'arrampicata, in stanze con il parquet e in acqua.",
+        "Il respiro fa parte del concatenamento motorio. Ne modifica il ritmo, il tono e la durata.",
+        "L'apnea involontaria restringe le possibilità disponibili durante un passaggio; respirare permette alla sequenza di restare variabile.",
+        "Danza, pratiche somatiche e lavoro in acqua hanno ampliato il repertorio che porto nell'arrampicata.",
       ],
       en: [
-        "Almost everyone holds their breath in hard moves. Then they are surprised when the arms shut down.",
-        "Breath is not there to relax you: it keeps open the possibility of changing your mind mid-movement. A body in apnea has already chosen, and from there it can only pull.",
-        "The things that taught me most about climbing happened outside climbing, in rooms with wooden floors and in water.",
+        "Breath is part of the motor assemblage. It changes rhythm, tone and duration.",
+        "Involuntary breath-holding narrows the possibilities available during a move; breathing allows the sequence to remain variable.",
+        "Dance, somatic practices and work in water have expanded the repertoire I bring to climbing.",
       ],
       es: [
-        "Casi todos aguantan la respiración en los pasos duros. Luego se sorprenden de que los brazos se cierren.",
-        "La respiración no sirve para relajarse: mantiene abierta la posibilidad de cambiar de idea a mitad del movimiento. Un cuerpo en apnea ya ha elegido, y desde ahí sólo puede tirar.",
-        "Lo que más me ha enseñado sobre escalada ocurrió fuera de la escalada, en salas con parqué y en el agua.",
+        "La respiración forma parte del agenciamiento motor. Modifica su ritmo, tono y duración.",
+        "La apnea involuntaria reduce las posibilidades disponibles durante un paso; respirar permite que la secuencia siga siendo variable.",
+        "La danza, las prácticas somáticas y el trabajo en el agua han ampliado el repertorio que llevo a la escalada.",
+      ],
+    },
+  },
+  {
+    slug: "il-perimetro",
+    theme: "mare",
+    index: "v",
+    title: { it: "Il perimetro", en: "The perimeter", es: "El perímetro" },
+    body: {
+      it: [
+        "Nel deep water solo la linea di salita si compone con una superficie mobile. La roccia dà appigli; il mare modifica distanza, suono e orientamento.",
+        "Il confine fra acqua e roccia non è stabile. Si sposta con ogni onda e continua, attraverso l'orizzonte, nel confine fra mare e cielo.",
+        "Il perimetro non chiude uno spazio: misura provvisoriamente le relazioni che lo attraversano.",
+      ],
+      en: [
+        "In deep-water soloing, the climbing line is composed with a moving surface. Rock offers holds; the sea modifies distance, sound and orientation.",
+        "The boundary between water and rock is not stable. It shifts with each wave and continues, through the horizon, into the boundary between sea and sky.",
+        "The perimeter does not enclose a space: it provisionally measures the relations that cross it.",
+      ],
+      es: [
+        "En el psicobloc, la línea de escalada se compone con una superficie móvil. La roca ofrece presas; el mar modifica distancia, sonido y orientación.",
+        "El límite entre agua y roca no es estable. Se desplaza con cada ola y continúa, a través del horizonte, en el límite entre mar y cielo.",
+        "El perímetro no cierra un espacio: mide provisionalmente las relaciones que lo atraviesan.",
+      ],
+    },
+  },
+  {
+    slug: "linea-dacqua",
+    theme: "mare",
+    index: "vi",
+    title: { it: "Linea d'acqua", en: "Waterline", es: "Línea de agua" },
+    body: {
+      it: [
+        "Una soglia separa due ambienti e permette il passaggio fra loro. La linea d'acqua svolge entrambe le funzioni.",
+        "Avvicinandosi al mare cambiano l'attrito, la temperatura, il suono e la conseguenza di una caduta. Cambiano quindi le regole locali del gioco.",
+        "La via resta sulla roccia, ma il suo campo comprende l'acqua.",
+      ],
+      en: [
+        "A threshold separates two environments and allows passage between them. The waterline performs both functions.",
+        "Near the sea, friction, temperature, sound and the consequence of a fall change. The local rules of the game change with them.",
+        "The route remains on the rock, but its field includes the water.",
+      ],
+      es: [
+        "Un umbral separa dos entornos y permite el paso entre ellos. La línea de agua cumple ambas funciones.",
+        "Al acercarse al mar cambian la fricción, la temperatura, el sonido y la consecuencia de una caída. Cambian así las reglas locales del juego.",
+        "La vía permanece en la roca, pero su campo incluye el agua.",
       ],
     },
   },
   {
     slug: "attrito",
     theme: "roccia",
-    index: "v",
+    index: "vii",
     title: { it: "Attrito", en: "Friction", es: "Fricción" },
     body: {
       it: [
-        "L'attrito è una conversazione fra due superfici che non si conoscono. Cambia con l'umidità, con l'ora, con la temperatura della pelle.",
-        "Per questo la stessa via non è mai la stessa via. Non è una frase gentile: è una condizione tecnica. Chi la ignora si allena a ripetere, non a leggere.",
-        "Leggere la roccia non vuol dire indovinare cosa nasconde. Non nasconde niente. Vuol dire accorgersi di quello che è già in vista.",
+        "L'attrito è una relazione fra superfici. Varia con l'umidità, la temperatura e la pressione esercitata.",
+        "Queste variazioni cambiano le possibilità di una stessa via. La ripetizione non restituisce mai condizioni identiche.",
+        "Leggere la roccia significa percepire le regole locali che emergono nel contatto.",
       ],
       en: [
-        "Friction is a conversation between two surfaces that do not know each other. It shifts with humidity, with the hour, with skin temperature.",
-        "So the same route is never the same route. That is not a kind phrase: it is a technical condition. Ignoring it trains you to repeat, not to read.",
-        "Reading rock does not mean guessing what it hides. It hides nothing. It means noticing what is already in plain view.",
+        "Friction is a relation between surfaces. It varies with humidity, temperature and applied pressure.",
+        "These variations alter the possibilities of the same route. Repetition never restores identical conditions.",
+        "Reading rock means perceiving the local rules that emerge through contact.",
       ],
       es: [
-        "La fricción es una conversación entre dos superficies que no se conocen. Cambia con la humedad, con la hora, con la temperatura de la piel.",
-        "Por eso la misma vía nunca es la misma vía. No es una frase amable: es una condición técnica. Quien la ignora se entrena a repetir, no a leer.",
-        "Leer la roca no es adivinar lo que esconde. No esconde nada. Es darse cuenta de lo que ya está a la vista.",
+        "La fricción es una relación entre superficies. Varía con la humedad, la temperatura y la presión ejercida.",
+        "Estas variaciones alteran las posibilidades de una misma vía. La repetición nunca restituye condiciones idénticas.",
+        "Leer la roca significa percibir las reglas locales que surgen en el contacto.",
       ],
     },
   },
   {
     slug: "tracciare",
     theme: "roccia",
-    index: "vi",
+    index: "viii",
     title: { it: "Tracciare", en: "Setting", es: "Equipar" },
     body: {
       it: [
-        "Tracciare è scrivere per un corpo che non conosci. Metti una presa e stai proponendo una domanda a qualcuno che arriverà fra tre giorni, più basso o più alto di te.",
-        "Una buona linea non impone la soluzione: la rende trovabile. Se esiste un solo modo di salire, non hai tracciato, hai chiuso una porta.",
-        "La parte che mi interessa è quando qualcuno risolve un passaggio in un modo che non avevo previsto. Lì il blocco smette di essere mio.",
+        "Tracciare significa costruire un sistema di regole per corpi che non si conoscono in anticipo.",
+        "Una linea dispone prese, distanze e orientamenti senza determinare interamente la soluzione.",
+        "Quando compare un gesto non previsto, il gioco mostra una possibilità che il tracciatore non aveva anticipato.",
       ],
       en: [
-        "Setting is writing for a body you don't know. You place a hold and you are posing a question to someone arriving in three days, shorter or taller than you.",
-        "A good line does not impose the solution: it makes it findable. If there is only one way up, you haven't set, you have closed a door.",
-        "The part I care about is when someone solves a move in a way I hadn't foreseen. There the problem stops being mine.",
+        "Setting means constructing a system of rules for bodies that cannot be known in advance.",
+        "A line arranges holds, distances and orientations without fully determining the solution.",
+        "When an unforeseen gesture appears, the game reveals a possibility the setter had not anticipated.",
       ],
       es: [
-        "Equipar es escribir para un cuerpo que no conoces. Colocas una presa y estás planteando una pregunta a alguien que llegará dentro de tres días, más bajo o más alto que tú.",
-        "Una buena línea no impone la solución: la hace encontrable. Si sólo hay una manera de subir, no has equipado, has cerrado una puerta.",
-        "La parte que me interesa es cuando alguien resuelve un paso de un modo que yo no había previsto. Ahí el bloque deja de ser mío.",
+        "Equipar significa construir un sistema de reglas para cuerpos que no se conocen de antemano.",
+        "Una línea dispone presas, distancias y orientaciones sin determinar por completo la solución.",
+        "Cuando aparece un gesto imprevisto, el juego muestra una posibilidad que quien equipó no había anticipado.",
       ],
     },
   },
@@ -371,36 +421,80 @@ export const autografia: Record<
 > = {
   it: {
     kicker: "Autografia di un gesto",
-    title: "Un gesto che accade una volta",
-    lead: "Non una firma che lasci sulla roccia. Un evento che accade fra te e lei, e che poteva anche non accadere.",
+    title: "Una pratica condivisa",
+    lead: "Un lavoro individuale sull'arrampicata, costruito a partire dal corpo, dalla linea e dalle condizioni presenti.",
     body: [
-      "Non è un pacchetto e non è un programma. È un lavoro su un corpo alla volta: come si distribuisce il peso, come si legge una sequenza prima di toccarla, cosa succede al respiro quando la difficoltà sale.",
-      "Serve tempo e serve disponibilità a rifare le cose facili. Chi cerca un metodo rapido non troverà niente di utile qui.",
-      "Traccio anche linee, in falesia e in palestra, per chi vuole un blocco costruito su una domanda precisa.",
+      "Osserviamo come si compongono peso, appoggi, sguardo e respiro in una sequenza. Il lavoro parte da ciò che accade, non da un modello unico da riprodurre.",
+      "Ripetere serve a produrre differenze percepibili e ad ampliare le possibilità di movimento. Anche i passaggi facili fanno parte della pratica.",
+      "Posso costruire linee in falesia o in palestra attorno a una questione precisa emersa durante il lavoro.",
     ],
-    close: "Si comincia scrivendo due righe: dove sei adesso, da quanto, cosa ti si blocca.",
+    close: "Per iniziare puoi scrivere dove arrampichi, da quanto tempo e quale situazione vuoi osservare.",
   },
   en: {
     kicker: "Autograph of a gesture",
-    title: "A gesture that happens once",
-    lead: "Not a signature you leave on the rock. An event that happens between you and it, and that could just as well not have happened.",
+    title: "A shared practice",
+    lead: "Individual work on climbing, built from the body, the line and present conditions.",
     body: [
-      "It is not a package and not a program. It is work on one body at a time: how weight is distributed, how a sequence is read before touching it, what happens to breathing when difficulty rises.",
-      "It takes time and a willingness to redo easy things. Anyone looking for a fast method will find nothing useful here.",
-      "I also set lines, outdoors and indoors, for people who want a problem built around a precise question.",
+      "We observe how weight, footholds, gaze and breath compose a sequence. The work begins with what happens, not with a single model to reproduce.",
+      "Repetition serves to produce perceptible differences and expand the possibilities of movement. Easy sequences are also part of the practice.",
+      "I can construct lines outdoors or indoors around a precise question emerging from the work.",
     ],
-    close: "It starts by writing a few lines: where you are now, for how long, what stops you.",
+    close: "To begin, write where you climb, how long you have climbed and which situation you want to observe.",
   },
   es: {
     kicker: "Autografía de un gesto",
-    title: "Un gesto que sucede una vez",
-    lead: "No una firma que dejas en la roca. Un acontecimiento que sucede entre tú y ella, y que bien podría no haber sucedido.",
+    title: "Una práctica compartida",
+    lead: "Un trabajo individual sobre la escalada, construido a partir del cuerpo, la línea y las condiciones presentes.",
     body: [
-      "No es un paquete ni un programa. Es un trabajo sobre un cuerpo cada vez: cómo se reparte el peso, cómo se lee una secuencia antes de tocarla, qué le pasa a la respiración cuando sube la dificultad.",
-      "Requiere tiempo y disposición a repetir lo fácil. Quien busque un método rápido no encontrará nada útil aquí.",
-      "También equipo líneas, en roca y en rocódromo, para quien quiere un bloque construido sobre una pregunta precisa.",
+      "Observamos cómo se componen el peso, los apoyos, la mirada y la respiración en una secuencia. El trabajo parte de lo que ocurre, no de un único modelo que reproducir.",
+      "Repetir sirve para producir diferencias perceptibles y ampliar las posibilidades de movimiento. Los pasos fáciles también forman parte de la práctica.",
+      "Puedo construir líneas en roca o en rocódromo alrededor de una cuestión precisa surgida durante el trabajo.",
     ],
-    close: "Se empieza escribiendo dos líneas: dónde estás ahora, desde cuándo, qué se te bloquea.",
+    close: "Para empezar, escribe dónde escalas, desde cuándo y qué situación quieres observar.",
+  },
+};
+
+/* ------------------------------------------------------------- About ---- */
+
+type AboutCopy = {
+  title: string;
+  intro: string;
+  stages: { title: string; body: string }[];
+};
+
+export const about: Record<FullLocale, AboutCopy> = {
+  it: {
+    title: "Chi sono",
+    intro: "Il mio percorso attraversa pratiche del corpo, movimento, acqua, filosofia e arrampicata. Non le considero metodi da sommare, ma esperienze che modificano il modo in cui osservo un gesto.",
+    stages: [
+      { title: "Corpo", body: "Mi sono formato come operatore craniosacrale e in Body-Mind Centering, nei percorsi SME per adulti e IDME per bambini. Ho seguito anche una formazione prenatale, acquaticità neonatale e Watsu." },
+      { title: "Movimento", body: "Ho studiato danza classica e butoh, poi contact improvisation, aikido, capoeira, tai chi e tango. Ogni pratica dispone diversamente peso, ritmo, contatto e orientamento." },
+      { title: "Acqua", body: "Ho praticato danza in acqua e apnea con monopinna. Nell'acqua il sostegno, la pressione e il respiro cambiano le regole del movimento." },
+      { title: "Pensiero e disegno", body: "Ho studiato filosofia all'università senza concludere la laurea. Leggo e disegno: sono due modi, diversi, di seguire una linea e vedere come varia." },
+      { title: "Arrampicata", body: "Arrampico, insegno e traccio. Porto in questo lavoro le domande prodotte dalle altre pratiche, senza trasformarle in un metodo universale." },
+    ],
+  },
+  en: {
+    title: "About",
+    intro: "My path crosses body practices, movement, water, philosophy and climbing. I do not regard them as methods to be added together, but as experiences that alter how I observe a gesture.",
+    stages: [
+      { title: "Body", body: "I trained as a craniosacral practitioner and in Body-Mind Centering, through SME work with adults and IDME work with children. I also trained in prenatal work, infant aquatics and Watsu." },
+      { title: "Movement", body: "I studied classical dance and butoh, followed by contact improvisation, aikido, capoeira, tai chi and tango. Each practice arranges weight, rhythm, contact and orientation differently." },
+      { title: "Water", body: "I practised dance in water and monofin freediving. In water, support, pressure and breath change the rules of movement." },
+      { title: "Thought and drawing", body: "I studied philosophy at university without completing the degree. I read and draw: two different ways of following a line and seeing how it varies." },
+      { title: "Climbing", body: "I climb, teach and set routes. I bring questions produced by the other practices into this work, without turning them into a universal method." },
+    ],
+  },
+  es: {
+    title: "Quién soy",
+    intro: "Mi recorrido atraviesa prácticas del cuerpo, movimiento, agua, filosofía y escalada. No las considero métodos que sumar, sino experiencias que modifican mi manera de observar un gesto.",
+    stages: [
+      { title: "Cuerpo", body: "Me formé como operador craneosacral y en Body-Mind Centering, en los recorridos SME para adultos e IDME para niños. También me formé en trabajo prenatal, acuaticidad para bebés y Watsu." },
+      { title: "Movimiento", body: "Estudié danza clásica y butoh, después contact improvisation, aikido, capoeira, tai chi y tango. Cada práctica dispone de forma distinta el peso, el ritmo, el contacto y la orientación." },
+      { title: "Agua", body: "Practiqué danza en el agua y apnea con monoaleta. En el agua, el sostén, la presión y la respiración cambian las reglas del movimiento." },
+      { title: "Pensamiento y dibujo", body: "Estudié filosofía en la universidad sin terminar la carrera. Leo y dibujo: son dos maneras distintas de seguir una línea y ver cómo varía." },
+      { title: "Escalada", body: "Escalo, enseño y equipo vías. Llevo a este trabajo las preguntas producidas por las otras prácticas, sin convertirlas en un método universal." },
+    ],
   },
 };
 

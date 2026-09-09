@@ -62,6 +62,7 @@ function ShortPage({ lang }: { lang: "zh" | "ja" }) {
 function FullHome({ lang }: { lang: FullLocale }) {
   return (
     <main>
+      <h1 className="sr-only">Ilinx</h1>
       <section className="mx-auto max-w-[1600px] px-3 py-3 md:px-6 md:py-6">
         <div className="flex flex-col gap-6">
           {themes.map((theme) => (

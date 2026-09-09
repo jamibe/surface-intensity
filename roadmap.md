@@ -15,7 +15,10 @@
 - [x] Pagina contatto
 - [x] ZH/JA: pagina singola essenziale
 - [x] Metadati head per ogni pagina
-- [ ] Migliorare tutti i testi, eliminando le frasi a effetto
+- [ ] Migliorare tutti i testi, eliminando le frasi a effetto e mantenendo il lessico Deleuze–Caillois
+- [ ] Aggiungere “Chi sono” in tappe visibili, con il percorso ora autorizzato alla pubblicazione
+- [ ] Sostituire la stanza con sabbia e onde di ascendenza Hokusai
+- [ ] Unire le immagini iniziali in un paesaggio continuo e sostituire il pallino grigio
 
 ## Vincoli dati dall'utente
 - Niente nero totale; palette carta calda, inchiostro, un solo accento

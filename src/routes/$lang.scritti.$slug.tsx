@@ -11,7 +11,8 @@ export const Route = createFileRoute("/$lang/scritti/$slug")({
     const lang = (isFullLocale(params.lang) ? params.lang : "it") as FullLocale;
     const text = texts.find((t) => t.slug === params.slug);
     const title = `${text ? text.title[lang] : "Ilinx"} — Ilinx`;
-    const description = text ? text.body[lang][0].slice(0, 155) : "Ilinx";
+    const firstParagraph = text?.body[lang][0];
+    const description = firstParagraph ? firstParagraph.slice(0, 155) : "Ilinx";
     return {
       meta: [
         { title },
@@ -31,8 +32,10 @@ function TextPage() {
     lang: FullLocale;
     slug: string;
   };
-  const text = texts.find((t) => t.slug === slug)!;
-  const theme = themes.find((t) => t.slug === text.theme)!;
+  const text = texts.find((item) => item.slug === slug);
+  if (!text) return null;
+  const theme = themes.find((item) => item.slug === text.theme);
+  if (!theme) return null;
   const t = ui[lang];
 
   return (

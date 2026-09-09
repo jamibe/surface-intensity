@@ -28,7 +28,21 @@ type P3 = Record<FullLocale, string[]>;
 
 /* ---------------------------------------------------------------- UI ---- */
 
-export const ui: Record<FullLocale, Record<string, string>> = {
+type UiCopy = {
+  archive: string;
+  autografia: string;
+  contact: string;
+  threshold: string;
+  doors: string;
+  read: string;
+  room: string;
+  back: string;
+  texts: string;
+  languages: string;
+  enter: string;
+};
+
+export const ui: Record<FullLocale, UiCopy> = {
   it: {
     archive: "Archivio",
     autografia: "Autografia di un gesto",

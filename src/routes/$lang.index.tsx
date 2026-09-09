@@ -6,6 +6,7 @@ import {
   themes,
   type FullLocale,
   type Locale,
+  type ThemeSlug,
 } from "@/lib/content";
 import { SiteFooter } from "@/components/site";
 
@@ -104,7 +105,7 @@ function FullHome({ lang }: { lang: FullLocale }) {
 
 type DoorProps = {
   to: "/$lang/tema/$tema";
-  params: { lang: FullLocale; tema: string };
+  params: { lang: FullLocale; tema: ThemeSlug };
   image: string;
   width: number;
   height: number;

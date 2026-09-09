@@ -257,6 +257,31 @@
   animation: streak 3.4s ease-in-out infinite;
 }
 
+.water-sheen {
+  position: absolute;
+  inset: 45% 0 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 12px,
+    oklch(0.88 0.025 225 / 0.18) 13px,
+    transparent 15px
+  );
+  opacity: 0;
+  transform: translateX(-2%);
+  transition: opacity 0.8s ease;
+}
+.door:hover .water-sheen,
+.door:focus-visible .water-sheen {
+  opacity: 1;
+  animation: drift 8s ease-in-out infinite alternate;
+}
+
+.autografia-mark:hover .streak-line,
+.autografia-mark:focus-visible .streak-line {
+  animation: streak 3.4s ease-in-out infinite;
+}
+
 /* Sky of the game page */
 .sky-star {
   position: absolute;

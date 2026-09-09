@@ -1,5 +1,6 @@
 import cielo from "@/assets/porta-cielo.jpg";
 import chioma from "@/assets/porta-chioma.jpg";
+import mare from "@/assets/porta-mare.jpg";
 import roccia from "@/assets/porta-roccia.jpg";
 import gioco from "@/assets/porta-gioco.jpg";
 
@@ -27,7 +28,21 @@ type P3 = Record<FullLocale, string[]>;
 
 /* ---------------------------------------------------------------- UI ---- */
 
-export const ui: Record<FullLocale, Record<string, string>> = {
+type UiCopy = {
+  archive: string;
+  autografia: string;
+  contact: string;
+  threshold: string;
+  doors: string;
+  read: string;
+  room: string;
+  back: string;
+  texts: string;
+  languages: string;
+  enter: string;
+};
+
+export const ui: Record<FullLocale, UiCopy> = {
   it: {
     archive: "Archivio",
     autografia: "Autografia di un gesto",
@@ -103,14 +118,14 @@ export const home: Record<FullLocale, { title: string; lead: string; body: strin
 
 /* ------------------------------------------------------------ Themes ---- */
 
-export type ThemeSlug = "cielo" | "chioma" | "roccia";
+export type ThemeSlug = "cielo" | "chioma" | "mare" | "roccia";
 
 export type Theme = {
   slug: ThemeSlug;
   image: string;
   width: number;
   height: number;
-  door: "sky" | "canopy" | "rain";
+  door: "sky" | "canopy" | "water" | "rain";
   span: string;
   ratio: string;
   name: T3;
@@ -146,6 +161,21 @@ export const themes: Theme[] = [
       it: "Movimento laterale, respiro, quello che si impara ballando.",
       en: "Lateral movement, breath, what you learn by dancing.",
       es: "Movimiento lateral, respiración, lo que se aprende bailando.",
+    },
+  },
+  {
+    slug: "mare",
+    image: mare,
+    width: 1600,
+    height: 1008,
+    door: "water",
+    span: "md:col-span-12",
+    ratio: "aspect-[16/10]",
+    name: { it: "Mare", en: "Sea", es: "Mar" },
+    note: {
+      it: "Il perimetro fra roccia e acqua, esteso fino all'orizzonte.",
+      en: "The perimeter between rock and water, extending to the horizon.",
+      es: "El perímetro entre roca y agua, extendido hasta el horizonte.",
     },
   },
   {

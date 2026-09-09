@@ -6,14 +6,16 @@
 - Immagini delle porte d'archivio (src/assets/)
 
 ## Da fare
-- [ ] Pagina d'ingresso senza lingua (nome + scelta lingua)
-- [ ] Home per lingua: molto semplice, immagini grandi, testo a scomparsa (appare al passaggio)
-- [ ] Porte d'archivio a tutta larghezza, senza etichette fisse; animazioni al hover (nuvole, chioma, pioggia, stelle)
-- [ ] Pagine tema + singolo scritto
-- [ ] "Autografia di un gesto": la quarta porta (cielo notturno) è la sezione del coaching, non un gioco a parte
-- [ ] Pagina contatto
-- [ ] ZH/JA: pagina singola essenziale
-- [ ] Metadati head per ogni pagina
+- [x] Pagina d'ingresso senza lingua (nome + scelta lingua)
+- [x] Home: togliere tutte le frasi iniziali; aprire direttamente sulle immagini
+- [x] Aggiungere il mare fra albero e roccia: confine roccia/acqua, orizzonte mare/cielo
+- [x] Porte d'archivio a tutta larghezza, senza etichette fisse; animazioni al passaggio
+- [x] Pagine tema + singolo scritto
+- [x] "Autografia di un gesto": cielo notturno in filigrana, difficile da trovare; accesso al dialogo/coaching
+- [x] Pagina contatto
+- [x] ZH/JA: pagina singola essenziale
+- [x] Metadati head per ogni pagina
+- [ ] Migliorare tutti i testi, eliminando le frasi a effetto
 
 ## Vincoli dati dall'utente
 - Niente nero totale; palette carta calda, inchiostro, un solo accento

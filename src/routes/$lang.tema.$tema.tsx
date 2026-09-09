@@ -38,7 +38,8 @@ function ThemePage() {
     lang: FullLocale;
     tema: ThemeSlug;
   };
-  const theme = themes.find((t) => t.slug === tema)!;
+  const theme = themes.find((item) => item.slug === tema);
+  if (!theme) return null;
   const list = textsByTheme(tema);
   const t = ui[lang];
 

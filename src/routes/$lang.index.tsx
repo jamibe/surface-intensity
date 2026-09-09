@@ -1,11 +1,9 @@
 import { createFileRoute, Link, useParams } from "@tanstack/react-router";
 import {
   autografiaDoor,
-  home,
   isFullLocale,
   shortPages,
   themes,
-  ui,
   type FullLocale,
   type Locale,
 } from "@/lib/content";
@@ -85,7 +83,7 @@ function FullHome({ lang }: { lang: FullLocale }) {
         to="/$lang/autografia"
         params={{ lang }}
         aria-label={autografiaDoor.name[lang]}
-        className="group relative mx-auto my-24 block h-20 w-20 overflow-hidden rounded-full opacity-[0.12] transition-all duration-700 hover:h-28 hover:w-28 hover:opacity-70 focus-visible:h-28 focus-visible:w-28 focus-visible:opacity-70"
+        className="autografia-mark group relative mx-auto my-24 block h-20 w-20 overflow-hidden rounded-full opacity-[0.12] transition-all duration-700 hover:h-28 hover:w-28 hover:opacity-70 focus-visible:h-28 focus-visible:w-28 focus-visible:opacity-70"
       >
         <img
           src={autografiaDoor.image}
@@ -105,8 +103,8 @@ function FullHome({ lang }: { lang: FullLocale }) {
 }
 
 type DoorProps = {
-  to: string;
-  params: Record<string, string>;
+  to: "/$lang/tema/$tema";
+  params: { lang: FullLocale; tema: string };
   image: string;
   width: number;
   height: number;
@@ -118,8 +116,7 @@ type DoorProps = {
 function Door({ to, params, image, width, height, name, note, kind }: DoorProps) {
   return (
     <Link
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      to={to as any}
+      to={to}
       params={params}
       className="door group relative block aspect-[16/10] overflow-hidden rounded-lg outline outline-border md:aspect-[21/9]"
     >
@@ -133,6 +130,7 @@ function Door({ to, params, image, width, height, name, note, kind }: DoorProps)
       />
       {kind === "sky" && <span className="cloud" />}
       {kind === "canopy" && <span className="canopy" />}
+      {kind === "water" && <span className="water-sheen" />}
       {kind === "rain" && (
         <>
           <span className="drip" style={{ left: "22%" }} />

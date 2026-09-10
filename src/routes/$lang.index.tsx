@@ -76,7 +76,7 @@ function FullHome({ lang }: { lang: FullLocale }) {
               name={theme.name[lang]}
               note={theme.note[lang]}
               kind={theme.door}
-              secretLabel={theme.slug === "cielo" ? autografiaDoor.name[lang] : undefined}
+              {...(theme.slug === "cielo" ? { secretLabel: autografiaDoor.name[lang] } : {})}
             />
           ))}
         </div>

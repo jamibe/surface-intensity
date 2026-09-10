@@ -64,7 +64,7 @@ function FullHome({ lang }: { lang: FullLocale }) {
     <main>
       <h1 className="sr-only">Ilinx</h1>
       <section className="mx-auto max-w-[1600px] px-3 py-3 md:px-6 md:py-6">
-        <div className="flex flex-col gap-6">
+        <div className="landscape overflow-hidden rounded-lg outline outline-border">
           {themes.map((theme) => (
             <Door
               key={theme.slug}
@@ -76,28 +76,11 @@ function FullHome({ lang }: { lang: FullLocale }) {
               name={theme.name[lang]}
               note={theme.note[lang]}
               kind={theme.door}
+              secretLabel={theme.slug === "cielo" ? autografiaDoor.name[lang] : undefined}
             />
           ))}
         </div>
       </section>
-
-      <Link
-        to="/$lang/autografia"
-        params={{ lang }}
-        aria-label={autografiaDoor.name[lang]}
-        className="autografia-mark group relative mx-auto my-24 block h-20 w-20 overflow-hidden rounded-full opacity-[0.12] transition-all duration-700 hover:h-28 hover:w-28 hover:opacity-70 focus-visible:h-28 focus-visible:w-28 focus-visible:opacity-70"
-      >
-        <img
-          src={autografiaDoor.image}
-          alt=""
-          width={autografiaDoor.width}
-          height={autografiaDoor.height}
-          loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <span className="streak-line absolute top-1/2 left-0" />
-        <span className="sr-only">{autografiaDoor.name[lang]}</span>
-      </Link>
 
       <SiteFooter lang={lang} />
     </main>
@@ -113,46 +96,51 @@ type DoorProps = {
   name: string;
   note: string;
   kind: "sky" | "canopy" | "water" | "rain" | "stars";
+  secretLabel?: string;
 };
 
-function Door({ to, params, image, width, height, name, note, kind }: DoorProps) {
+function Door({ to, params, image, width, height, name, note, kind, secretLabel }: DoorProps) {
   return (
-    <Link
-      to={to}
-      params={params}
-      className="door group relative block aspect-[16/10] overflow-hidden rounded-lg outline outline-border md:aspect-[21/9]"
-    >
-      <img
-        src={image}
-        alt=""
-        width={width}
-        height={height}
-        loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-      {kind === "sky" && <span className="cloud" />}
-      {kind === "canopy" && <span className="canopy" />}
-      {kind === "water" && <span className="water-sheen" />}
-      {kind === "rain" && (
-        <>
-          <span className="drip" style={{ left: "22%" }} />
-          <span className="drip" style={{ left: "48%", animationDelay: ".2s" }} />
-          <span className="drip" style={{ left: "71%", animationDelay: ".45s" }} />
-          <span className="drip" style={{ left: "88%", animationDelay: ".15s" }} />
-        </>
+    <article className="door group relative aspect-[16/10] overflow-hidden md:aspect-[21/9]" data-kind={kind}>
+      <Link to={to} params={params} className="absolute inset-0 block">
+        <img
+          src={image}
+          alt=""
+          width={width}
+          height={height}
+          loading={kind === "sky" ? "eager" : "lazy"}
+          className="door-image absolute inset-0 h-full w-full object-cover"
+        />
+        {kind === "sky" && <span className="cloud" />}
+        {kind === "canopy" && <span className="canopy" />}
+        {kind === "water" && <span className="water-sheen" />}
+        {kind === "rain" && (
+          <>
+            <span className="drip" style={{ left: "22%" }} />
+            <span className="drip" style={{ left: "48%", animationDelay: ".2s" }} />
+            <span className="drip" style={{ left: "71%", animationDelay: ".45s" }} />
+            <span className="drip" style={{ left: "88%", animationDelay: ".15s" }} />
+          </>
+        )}
+        <span className="reveal absolute inset-x-0 bottom-0 flex flex-col gap-1 bg-gradient-to-t from-background/85 to-transparent p-6 md:p-8">
+          <span className="text-3xl tracking-tight md:text-4xl">{name}</span>
+          <span className="label">{note}</span>
+        </span>
+      </Link>
+      {secretLabel && (
+        <Link
+          to="/$lang/autografia"
+          params={{ lang: params.lang }}
+          aria-label={secretLabel}
+          className="hidden-constellation absolute top-[12%] right-[8%] z-10 h-24 w-32 focus-visible:opacity-100"
+        >
+          <span className="constellation-star constellation-star-a" />
+          <span className="constellation-star constellation-star-b" />
+          <span className="constellation-star constellation-star-c" />
+          <span className="constellation-thread" />
+          <span className="sr-only">{secretLabel}</span>
+        </Link>
       )}
-      {kind === "stars" && (
-        <>
-          <span className="star" style={{ top: "22%", left: "30%" }} />
-          <span className="star" style={{ top: "38%", left: "66%" }} />
-          <span className="star" style={{ top: "60%", left: "44%" }} />
-          <span className="streak-line" style={{ top: "30%", left: "20%" }} />
-        </>
-      )}
-      <span className="reveal absolute inset-x-0 bottom-0 flex flex-col gap-1 bg-gradient-to-t from-background/85 to-transparent p-6 md:p-8">
-        <span className="text-3xl tracking-tight md:text-4xl">{name}</span>
-        <span className="label">{note}</span>
-      </span>
-    </Link>
+    </article>
   );
 }

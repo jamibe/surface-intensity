@@ -27,6 +27,13 @@ export function SiteHeader({ lang }: { lang: FullLocale }) {
             {t.archive}
           </Link>
           <Link
+            to="/$lang/chi-sono"
+            params={{ lang }}
+            className="label transition-colors hover:text-foreground"
+          >
+            {t.about}
+          </Link>
+          <Link
             to="/$lang/contatto"
             params={{ lang }}
             className="label transition-colors hover:text-foreground"
@@ -49,11 +56,11 @@ export function SiteFooter({ lang }: { lang: FullLocale }) {
         </Link>
         <nav className="flex flex-wrap items-center gap-x-6 gap-y-2">
           <Link
-            to="/$lang/autografia"
+            to="/$lang/chi-sono"
             params={{ lang }}
             className="label transition-colors hover:text-foreground"
           >
-            {t.autografia}
+            {t.about}
           </Link>
           <Link
             to="/$lang/contatto"

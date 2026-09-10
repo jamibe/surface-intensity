@@ -1,7 +1,7 @@
 import { createFileRoute, Link, redirect, useParams } from "@tanstack/react-router";
 import { autografia, autografiaDoor, email, isFullLocale, ui, type FullLocale } from "@/lib/content";
 import { SiteFooter, SiteHeader } from "@/components/site";
-import stanza from "@/assets/stanza.jpg";
+import sabbiaOnde from "@/assets/sabbia-onde.jpg";
 
 export const Route = createFileRoute("/$lang/autografia")({
   beforeLoad: ({ params }) => {
@@ -60,12 +60,12 @@ function AutografiaPage() {
         <div className="mx-auto grid max-w-[1180px] grid-cols-1 items-center gap-10 px-6 py-16 md:grid-cols-12">
           <div className="md:col-span-7">
             <img
-              src={stanza}
-              alt=""
-              width={1200}
-              height={800}
+              src={sabbiaOnde}
+              alt="Onde che raggiungono la sabbia in un disegno ispirato alla stampa giapponese"
+              width={1600}
+              height={1008}
               loading="lazy"
-              className="w-full rounded-lg object-cover outline outline-border"
+              className="tide-image w-full rounded-lg object-cover outline outline-border"
             />
           </div>
           <div className="md:col-span-5">

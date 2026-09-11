@@ -1,6 +1,7 @@
 import { createFileRoute, redirect, useParams } from "@tanstack/react-router";
 import { about, isFullLocale, type FullLocale } from "@/lib/content";
 import { SiteFooter, SiteHeader } from "@/components/site";
+import ritratto from "@/assets/ilinx-ritratto.jpg.asset.json";
 
 export const Route = createFileRoute("/$lang/chi-sono")({
   beforeLoad: ({ params }) => {

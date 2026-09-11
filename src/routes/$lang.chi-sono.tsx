@@ -40,16 +40,11 @@ function AboutPage() {
             {page.intro}
           </p>
 
-          <figure className="mt-16 overflow-hidden rounded-lg outline outline-border">
-            <img
-              src={ritratto.url}
-              alt={page.title}
-              width={1920}
-              height={1080}
-              loading="lazy"
-              className="w-full object-cover"
-            />
-          </figure>
+          <AboutScene
+            src={ritratto.url}
+            alt={page.title}
+            caption={rhizome[lang].sceneCaption}
+          />
 
           <ol className="mt-20 border-t border-border">
             {page.stages.map((stage, index) => (

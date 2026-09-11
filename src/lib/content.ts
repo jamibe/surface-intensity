@@ -537,3 +537,82 @@ export const shortPages: Record<(typeof SHORT_LOCALES)[number], { lines: string[
     ],
   },
 };
+
+/* ------------------------------------------------ Rizoma / Instagram ---- */
+
+export const instagramHandle = "ilinx";
+export const instagramUrl = `https://instagram.com/${instagramHandle}`;
+
+type RhizomeCopy = {
+  title: string;
+  intro: string;
+  body: string[];
+  nodesLabel: string;
+  nodes: { title: string; body: string }[];
+  cta: string;
+  note: string;
+  sceneCaption: string;
+};
+
+export const rhizome: Record<FullLocale, RhizomeCopy> = {
+  it: {
+    title: "Rizoma",
+    intro:
+      "Una pagina che raccoglie ciò che pubblico su Instagram. Non è un diario né un portfolio: è un piano dove immagini brevi entrano in rapporto senza gerarchia.",
+    body: [
+      "Un rizoma non ha un punto d'inizio. Ogni immagine può essere collegata a qualunque altra: una presa, una linea d'acqua, un disegno, un tracciato. La sequenza cronologica è solo una delle letture possibili.",
+      "Le pubblicazioni funzionano come regole locali: brevi vincoli che producono variazione. Alcune restano isolate, altre formano concatenamenti che durano mesi.",
+    ],
+    nodesLabel: "Linee del piano",
+    nodes: [
+      { title: "Movimento", body: "Frammenti di sequenze: peso che si sposta, appoggi che cambiano ordine, ripetizioni che producono differenze." },
+      { title: "Superficie", body: "Roccia, acqua, sabbia. Il confine come misura: dove una superficie finisce, un'altra comincia." },
+      { title: "Tracciare", body: "Linee costruite in falesia e in palestra, viste come domande poste al corpo di chi le percorre." },
+      { title: "Disegno", body: "Segni su carta: seguire una linea e vedere come varia, senza descriverla." },
+      { title: "Ilinx", body: "Vertigine come categoria di gioco: il momento in cui la percezione ordinata si sposta." },
+    ],
+    cta: "Apri il piano su Instagram",
+    note: "Instagram resta esterno al sito: qui trovi le linee, là gli innesti quotidiani.",
+    sceneCaption: "Roccia e acqua: due superfici che si toccano su una stessa soglia.",
+  },
+  en: {
+    title: "Rhizome",
+    intro:
+      "A page gathering what I publish on Instagram. Not a diary, not a portfolio: a plane where short images enter into relation without hierarchy.",
+    body: [
+      "A rhizome has no starting point. Any image can connect to any other: a hold, a waterline, a drawing, a route. Chronology is only one possible reading.",
+      "Posts work as local rules: brief constraints producing variation. Some stay isolated, others form assemblages lasting months.",
+    ],
+    nodesLabel: "Lines of the plane",
+    nodes: [
+      { title: "Movement", body: "Fragments of sequences: weight shifting, footholds changing order, repetitions producing differences." },
+      { title: "Surface", body: "Rock, water, sand. The border as measure: where one surface ends, another begins." },
+      { title: "Setting", body: "Lines built outdoors and indoors, seen as questions posed to the body that travels them." },
+      { title: "Drawing", body: "Marks on paper: following a line and seeing how it varies, without describing it." },
+      { title: "Ilinx", body: "Vertigo as a category of play: the moment ordered perception shifts." },
+    ],
+    cta: "Open the plane on Instagram",
+    note: "Instagram stays outside the site: the lines are here, the daily grafts are there.",
+    sceneCaption: "Rock and water: two surfaces touching along one threshold.",
+  },
+  es: {
+    title: "Rizoma",
+    intro:
+      "Una página que reúne lo que publico en Instagram. No es un diario ni un portafolio: es un plano donde imágenes breves entran en relación sin jerarquía.",
+    body: [
+      "Un rizoma no tiene punto de inicio. Cada imagen puede conectarse con cualquier otra: una presa, una línea de agua, un dibujo, una vía. La cronología es solo una lectura posible.",
+      "Las publicaciones funcionan como reglas locales: vínculos breves que producen variación. Algunas quedan aisladas, otras forman agenciamientos que duran meses.",
+    ],
+    nodesLabel: "Líneas del plano",
+    nodes: [
+      { title: "Movimiento", body: "Fragmentos de secuencias: el peso que se desplaza, apoyos que cambian de orden, repeticiones que producen diferencias." },
+      { title: "Superficie", body: "Roca, agua, arena. El borde como medida: donde termina una superficie, empieza otra." },
+      { title: "Equipar", body: "Líneas construidas en roca y en rocódromo, vistas como preguntas al cuerpo que las recorre." },
+      { title: "Dibujo", body: "Trazos sobre papel: seguir una línea y ver cómo varía, sin describirla." },
+      { title: "Ilinx", body: "El vértigo como categoría de juego: el instante en que la percepción ordenada se desplaza." },
+    ],
+    cta: "Abrir el plano en Instagram",
+    note: "Instagram permanece fuera del sitio: aquí las líneas, allí los injertos cotidianos.",
+    sceneCaption: "Roca y agua: dos superficies que se tocan en un mismo umbral.",
+  },
+};

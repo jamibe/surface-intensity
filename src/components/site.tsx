@@ -34,6 +34,13 @@ export function SiteHeader({ lang }: { lang: FullLocale }) {
             {t.about}
           </Link>
           <Link
+            to="/$lang/rizoma"
+            params={{ lang }}
+            className="label transition-colors hover:text-foreground"
+          >
+            {rhizome[lang].title}
+          </Link>
+          <Link
             to="/$lang/contatto"
             params={{ lang }}
             className="label transition-colors hover:text-foreground"

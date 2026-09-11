@@ -15,6 +15,7 @@ import { Route as LangIndexRouteImport } from './routes/$lang.index'
 import { Route as LangAutografiaRouteImport } from './routes/$lang.autografia'
 import { Route as LangChiSonoRouteImport } from './routes/$lang.chi-sono'
 import { Route as LangContattoRouteImport } from './routes/$lang.contatto'
+import { Route as LangRizomaRouteImport } from './routes/$lang.rizoma'
 import { Route as LangScrittiSlugRouteImport } from './routes/$lang.scritti.$slug'
 import { Route as LangTemaTemaRouteImport } from './routes/$lang.tema.$tema'
 
@@ -48,6 +49,11 @@ const LangContattoRoute = LangContattoRouteImport.update({
   path: '/contatto',
   getParentRoute: () => LangRoute,
 } as any)
+const LangRizomaRoute = LangRizomaRouteImport.update({
+  id: '/rizoma',
+  path: '/rizoma',
+  getParentRoute: () => LangRoute,
+} as any)
 const LangScrittiSlugRoute = LangScrittiSlugRouteImport.update({
   id: '/scritti/$slug',
   path: '/scritti/$slug',
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/$lang/autografia': typeof LangAutografiaRoute
   '/$lang/chi-sono': typeof LangChiSonoRoute
   '/$lang/contatto': typeof LangContattoRoute
+  '/$lang/rizoma': typeof LangRizomaRoute
   '/$lang/': typeof LangIndexRoute
   '/$lang/scritti/$slug': typeof LangScrittiSlugRoute
   '/$lang/tema/$tema': typeof LangTemaTemaRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/$lang/autografia': typeof LangAutografiaRoute
   '/$lang/chi-sono': typeof LangChiSonoRoute
   '/$lang/contatto': typeof LangContattoRoute
+  '/$lang/rizoma': typeof LangRizomaRoute
   '/$lang': typeof LangIndexRoute
   '/$lang/scritti/$slug': typeof LangScrittiSlugRoute
   '/$lang/tema/$tema': typeof LangTemaTemaRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/$lang/autografia': typeof LangAutografiaRoute
   '/$lang/chi-sono': typeof LangChiSonoRoute
   '/$lang/contatto': typeof LangContattoRoute
+  '/$lang/rizoma': typeof LangRizomaRoute
   '/$lang/': typeof LangIndexRoute
   '/$lang/scritti/$slug': typeof LangScrittiSlugRoute
   '/$lang/tema/$tema': typeof LangTemaTemaRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/$lang/autografia'
     | '/$lang/chi-sono'
     | '/$lang/contatto'
+    | '/$lang/rizoma'
     | '/$lang/'
     | '/$lang/scritti/$slug'
     | '/$lang/tema/$tema'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
     | '/$lang/autografia'
     | '/$lang/chi-sono'
     | '/$lang/contatto'
+    | '/$lang/rizoma'
     | '/$lang'
     | '/$lang/scritti/$slug'
     | '/$lang/tema/$tema'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
     | '/$lang/autografia'
     | '/$lang/chi-sono'
     | '/$lang/contatto'
+    | '/$lang/rizoma'
     | '/$lang/'
     | '/$lang/scritti/$slug'
     | '/$lang/tema/$tema'
@@ -170,6 +182,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangContattoRouteImport
       parentRoute: typeof LangRoute
     }
+    '/$lang/rizoma': {
+      id: '/$lang/rizoma'
+      path: '/rizoma'
+      fullPath: '/$lang/rizoma'
+      preLoaderRoute: typeof LangRizomaRouteImport
+      parentRoute: typeof LangRoute
+    }
     '/$lang/scritti/$slug': {
       id: '/$lang/scritti/$slug'
       path: '/scritti/$slug'
@@ -191,6 +210,7 @@ interface LangRouteChildren {
   LangAutografiaRoute: typeof LangAutografiaRoute
   LangChiSonoRoute: typeof LangChiSonoRoute
   LangContattoRoute: typeof LangContattoRoute
+  LangRizomaRoute: typeof LangRizomaRoute
   LangIndexRoute: typeof LangIndexRoute
   LangScrittiSlugRoute: typeof LangScrittiSlugRoute
   LangTemaTemaRoute: typeof LangTemaTemaRoute
@@ -200,6 +220,7 @@ const LangRouteChildren: LangRouteChildren = {
   LangAutografiaRoute: LangAutografiaRoute,
   LangChiSonoRoute: LangChiSonoRoute,
   LangContattoRoute: LangContattoRoute,
+  LangRizomaRoute: LangRizomaRoute,
   LangIndexRoute: LangIndexRoute,
   LangScrittiSlugRoute: LangScrittiSlugRoute,
   LangTemaTemaRoute: LangTemaTemaRoute,

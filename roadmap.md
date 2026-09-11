@@ -19,6 +19,8 @@
 - [x] Aggiungere “Chi sono” in tappe visibili, con il percorso ora autorizzato alla pubblicazione
 - [x] Sostituire la stanza con sabbia e onde di ascendenza Hokusai
 - [x] Unire le immagini iniziali in un paesaggio continuo e sostituire il pallino grigio
+- [x] Indicare in “Chi sono” 26 anni di insegnamento e 20 anni di tracciatura
+- [ ] Inserire la foto personale in “Chi sono” al posto dell’immagine con la corda — in attesa del file
 
 ## Vincoli dati dall'utente
 - Niente nero totale; palette carta calda, inchiostro, un solo accento

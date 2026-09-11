@@ -471,7 +471,7 @@ export const about: Record<FullLocale, AboutCopy> = {
       { title: "Movimento", body: "Ho studiato danza classica e butoh, poi contact improvisation, aikido, capoeira, tai chi e tango. Ogni pratica dispone diversamente peso, ritmo, contatto e orientamento." },
       { title: "Acqua", body: "Ho praticato danza in acqua e apnea con monopinna. Nell'acqua il sostegno, la pressione e il respiro cambiano le regole del movimento." },
       { title: "Pensiero e disegno", body: "Ho studiato filosofia all'università senza concludere la laurea. Leggo e disegno: sono due modi, diversi, di seguire una linea e vedere come varia." },
-      { title: "Arrampicata", body: "Arrampico, insegno e traccio. Porto in questo lavoro le domande prodotte dalle altre pratiche, senza trasformarle in un metodo universale." },
+      { title: "Arrampicata", body: "Insegno arrampicata da 26 anni e traccio da 20. Porto in questo lavoro le domande prodotte dalle altre pratiche, senza trasformarle in un metodo universale." },
     ],
   },
   en: {
@@ -482,7 +482,7 @@ export const about: Record<FullLocale, AboutCopy> = {
       { title: "Movement", body: "I studied classical dance and butoh, followed by contact improvisation, aikido, capoeira, tai chi and tango. Each practice arranges weight, rhythm, contact and orientation differently." },
       { title: "Water", body: "I practised dance in water and monofin freediving. In water, support, pressure and breath change the rules of movement." },
       { title: "Thought and drawing", body: "I studied philosophy at university without completing the degree. I read and draw: two different ways of following a line and seeing how it varies." },
-      { title: "Climbing", body: "I climb, teach and set routes. I bring questions produced by the other practices into this work, without turning them into a universal method." },
+      { title: "Climbing", body: "I have taught climbing for 26 years and set routes for 20. I bring questions produced by the other practices into this work, without turning them into a universal method." },
     ],
   },
   es: {
@@ -493,7 +493,7 @@ export const about: Record<FullLocale, AboutCopy> = {
       { title: "Movimiento", body: "Estudié danza clásica y butoh, después contact improvisation, aikido, capoeira, tai chi y tango. Cada práctica dispone de forma distinta el peso, el ritmo, el contacto y la orientación." },
       { title: "Agua", body: "Practiqué danza en el agua y apnea con monoaleta. En el agua, el sostén, la presión y la respiración cambian las reglas del movimiento." },
       { title: "Pensamiento y dibujo", body: "Estudié filosofía en la universidad sin terminar la carrera. Leo y dibujo: son dos maneras distintas de seguir una línea y ver cómo varía." },
-      { title: "Escalada", body: "Escalo, enseño y equipo vías. Llevo a este trabajo las preguntas producidas por las otras prácticas, sin convertirlas en un método universal." },
+      { title: "Escalada", body: "Enseño escalada desde hace 26 años y equipo vías desde hace 20. Llevo a este trabajo las preguntas producidas por las otras prácticas, sin convertirlas en un método universal." },
     ],
   },
 };

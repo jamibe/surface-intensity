@@ -1,6 +1,7 @@
 import { createFileRoute, redirect, useParams } from "@tanstack/react-router";
 import { about, isFullLocale, type FullLocale } from "@/lib/content";
 import { SiteFooter, SiteHeader } from "@/components/site";
+import ritratto from "@/assets/ilinx-ritratto.jpg.asset.json";
 
 export const Route = createFileRoute("/$lang/chi-sono")({
   beforeLoad: ({ params }) => {
@@ -37,6 +38,17 @@ function AboutPage() {
           <p className="mt-8 max-w-[58ch] text-xl leading-relaxed text-pretty text-muted-foreground">
             {page.intro}
           </p>
+
+          <figure className="mt-16 overflow-hidden rounded-lg outline outline-border">
+            <img
+              src={ritratto.url}
+              alt={page.title}
+              width={1920}
+              height={1080}
+              loading="lazy"
+              className="w-full object-cover"
+            />
+          </figure>
 
           <ol className="mt-20 border-t border-border">
             {page.stages.map((stage, index) => (

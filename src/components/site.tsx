@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import { type FullLocale, ui } from "@/lib/content";
+import { type FullLocale, instagramHandle, instagramUrl, rhizome, ui } from "@/lib/content";
 
 export function Grain() {
   return <div className="grain" aria-hidden="true" />;
@@ -76,6 +76,21 @@ export function SiteFooter({ lang }: { lang: FullLocale }) {
           >
             {t.contact}
           </Link>
+          <Link
+            to="/$lang/rizoma"
+            params={{ lang }}
+            className="label transition-colors hover:text-foreground"
+          >
+            {rhizome[lang].title}
+          </Link>
+          <a
+            href={instagramUrl}
+            target="_blank"
+            rel="me noreferrer"
+            className="label transition-colors hover:text-foreground"
+          >
+            @{instagramHandle}
+          </a>
           <Link to="/" className="label transition-colors hover:text-foreground">
             {t.languages}
           </Link>

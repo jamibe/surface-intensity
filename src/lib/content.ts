@@ -4,7 +4,7 @@ import mare from "@/assets/porta-mare.jpg";
 import roccia from "@/assets/porta-roccia.jpg";
 import gioco from "@/assets/porta-gioco.jpg";
 
-export const FULL_LOCALES = ["it", "en", "es"] as const;
+export const FULL_LOCALES = ["it", "en", "es", "fr"] as const;
 export const SHORT_LOCALES = ["zh", "ja"] as const;
 export const LOCALES = [...FULL_LOCALES, ...SHORT_LOCALES] as const;
 
@@ -19,6 +19,7 @@ export const localeNames: Record<Locale, string> = {
   it: "Italiano",
   en: "English",
   es: "Español",
+  fr: "Français",
   zh: "中文",
   ja: "日本語",
 };
@@ -86,6 +87,20 @@ export const ui: Record<FullLocale, UiCopy> = {
     languages: "Lenguas",
     enter: "Entrar",
   },
+  fr: {
+    archive: "Archive",
+    about: "Qui je suis",
+    autografia: "Autographie d'un geste",
+    contact: "Contact",
+    threshold: "Seuil",
+    doors: "Les portes de l'archive",
+    read: "Lu",
+    room: "La salle",
+    back: "Retour",
+    texts: "Écrits",
+    languages: "Langues",
+    enter: "Entrer",
+  },
 };
 
 /* -------------------------------------------------------------- Home ---- */
@@ -118,6 +133,15 @@ export const home: Record<FullLocale, { title: string; lead: string; body: strin
       "Autografía de un gesto es el trabajo compartido que puede surgir de esta práctica.",
     ],
   },
+  fr: {
+    title: "Ilinx",
+    lead: "Une archive de pratiques, d'images et d'écrits sur l'escalade.",
+    body: [
+      "L'escalade compose un champ entre corps, rocher, gravité et milieu.",
+      "Les écrits observent les variations qui se produisent dans ce champ.",
+      "Autographie d'un geste est le travail partagé qui peut naître de cette pratique.",
+    ],
+  },
 };
 
 /* ------------------------------------------------------------ Themes ---- */
@@ -145,11 +169,12 @@ export const themes: Theme[] = [
     door: "sky",
     span: "md:col-span-5",
     ratio: "aspect-[4/5]",
-    name: { it: "Cielo", en: "Sky", es: "Cielo" },
+    name: { it: "Cielo", en: "Sky", es: "Cielo", fr: "Ciel" },
     note: {
       it: "Esposizione, orientamento, variazioni del campo percettivo.",
       en: "Exposure, orientation, variations in the perceptual field.",
       es: "Exposición, orientación, variaciones del campo perceptivo.",
+      fr: "Exposition, orientation, variations du champ perceptif.",
     },
   },
   {
@@ -160,11 +185,12 @@ export const themes: Theme[] = [
     door: "canopy",
     span: "md:col-span-7",
     ratio: "aspect-[16/10]",
-    name: { it: "Chioma", en: "Canopy", es: "Copa" },
+    name: { it: "Chioma", en: "Canopy", es: "Copa", fr: "Frondaison" },
     note: {
       it: "Respiro, ritmo e variazione del gesto.",
       en: "Breath, rhythm and variation of gesture.",
       es: "Respiración, ritmo y variación del gesto.",
+      fr: "Souffle, rythme et variation du geste.",
     },
   },
   {
@@ -175,11 +201,12 @@ export const themes: Theme[] = [
     door: "water",
     span: "md:col-span-12",
     ratio: "aspect-[16/10]",
-    name: { it: "Mare", en: "Sea", es: "Mar" },
+    name: { it: "Mare", en: "Sea", es: "Mar", fr: "Mer" },
     note: {
       it: "La soglia mobile fra roccia, acqua e orizzonte.",
       en: "The moving threshold between rock, water and horizon.",
       es: "El umbral móvil entre roca, agua y horizonte.",
+      fr: "Le seuil mobile entre rocher, eau et horizon.",
     },
   },
   {
@@ -190,11 +217,12 @@ export const themes: Theme[] = [
     door: "rain",
     span: "md:col-span-7",
     ratio: "aspect-[16/10]",
-    name: { it: "Roccia", en: "Rock", es: "Roca" },
+    name: { it: "Roccia", en: "Rock", es: "Roca", fr: "Rocher" },
     note: {
       it: "Attrito, regole locali e possibilità di movimento.",
       en: "Friction, local rules and possibilities of movement.",
       es: "Fricción, reglas locales y posibilidades de movimiento.",
+      fr: "Frottement, règles locales et possibilités de mouvement.",
     },
   },
 ];
@@ -207,7 +235,15 @@ export const autografiaDoor = {
     it: "Autografia di un gesto",
     en: "Autograph of a gesture",
     es: "Autografía de un gesto",
+    fr: "Autographie d'un geste",
   } as T3,
+};
+
+export const emberLabel: T3 = {
+  it: "Un fuoco compare nel cielo notturno mentre la pagina scorre.",
+  en: "A fire appears in the night sky as the page scrolls.",
+  es: "Un fuego aparece en el cielo nocturno mientras la página se desplaza.",
+  fr: "Un feu apparaît dans le ciel nocturne à mesure que la page défile.",
 };
 
 /* ------------------------------------------------------------- Texts ---- */
@@ -225,7 +261,7 @@ export const texts: Text[] = [
     slug: "il-gorgo",
     theme: "cielo",
     index: "i",
-    title: { it: "Il gorgo", en: "The whirl", es: "El remolino" },
+    title: { it: "Il gorgo", en: "The whirl", es: "El remolino", fr: "Le tournoiement" },
     body: {
       it: [
         "Caillois chiama ilinx i giochi che producono vertigine e modificano temporaneamente la percezione stabile.",
@@ -242,13 +278,18 @@ export const texts: Text[] = [
         "En la pared el equilibrio no es una posición que conservar. Varía al cambiar los apoyos, la gravedad y la orientación del cuerpo.",
         "El gesto surge de este conjunto de relaciones. El ascenso es una de sus posibles composiciones.",
       ],
+      fr: [
+        "Caillois nomme ilinx les jeux qui produisent le vertige et modifient temporairement la perception stable.",
+        "En paroi, l'équilibre n'est pas une position à conserver. Il varie à mesure que changent les appuis, la gravité et l'orientation du corps.",
+        "Le geste émerge de cet ensemble de relations. L'ascension en est une composition possible.",
+      ],
     },
   },
   {
     slug: "esposizione",
     theme: "cielo",
     index: "ii",
-    title: { it: "Esposizione", en: "Exposure", es: "Exposición" },
+    title: { it: "Esposizione", en: "Exposure", es: "Exposición", fr: "Exposition" },
     body: {
       it: [
         "L'esposizione modifica il campo percettivo. Distanza, profondità e rumore entrano nell'organizzazione del gesto.",
@@ -265,6 +306,11 @@ export const texts: Text[] = [
         "El paisaje no queda en segundo plano: participa en el agenciamiento entre mirada, presa, apoyo y respiración.",
         "La práctica consiste en reconocer esta variación sin reducirla a un obstáculo que vencer.",
       ],
+      fr: [
+        "L'exposition modifie le champ perceptif. Distance, profondeur et bruit entrent dans l'organisation du geste.",
+        "Le paysage ne reste pas en arrière-plan : il participe à l'agencement entre regard, prise, appui et souffle.",
+        "La pratique consiste à reconnaître cette variation sans la réduire à un obstacle à vaincre.",
+      ],
     },
   },
   {
@@ -275,6 +321,7 @@ export const texts: Text[] = [
       it: "La mano decide prima",
       en: "The hand decides first",
       es: "La mano decide primero",
+      fr: "La main décide d'abord",
     },
     body: {
       it: [
@@ -292,13 +339,23 @@ export const texts: Text[] = [
         "No es instinto. Es una memoria distribuida entre apoyos, peso, mirada y repeticiones acumuladas.",
         "Entrenar significa aumentar las variaciones disponibles, no fijar un único modelo de movimiento.",
       ],
+      fr: [
+        "Dans une séquence connue, la décision peut précéder sa représentation consciente.",
+        "Ce n'est pas de l'instinct. C'est une mémoire distribuée entre appuis, poids, regard et répétitions accumulées.",
+        "S'entraîner, c'est augmenter les variations disponibles, non fixer un seul modèle de mouvement.",
+      ],
     },
   },
   {
     slug: "respiro-laterale",
     theme: "chioma",
     index: "iv",
-    title: { it: "Respiro laterale", en: "Lateral breath", es: "Respiración lateral" },
+    title: {
+      it: "Respiro laterale",
+      en: "Lateral breath",
+      es: "Respiración lateral",
+      fr: "Souffle latéral",
+    },
     body: {
       it: [
         "Il respiro fa parte del concatenamento motorio. Ne modifica il ritmo, il tono e la durata.",
@@ -315,13 +372,18 @@ export const texts: Text[] = [
         "La apnea involuntaria reduce las posibilidades disponibles durante un paso; respirar permite que la secuencia siga siendo variable.",
         "La danza, las prácticas somáticas y el trabajo en el agua han ampliado el repertorio que llevo a la escalada.",
       ],
+      fr: [
+        "Le souffle fait partie de l'agencement moteur. Il en modifie le rythme, le tonus et la durée.",
+        "L'apnée involontaire restreint les possibilités disponibles pendant un pas ; respirer permet à la séquence de rester variable.",
+        "La danse, les pratiques somatiques et le travail dans l'eau ont élargi le répertoire que je porte dans l'escalade.",
+      ],
     },
   },
   {
     slug: "il-perimetro",
     theme: "mare",
     index: "v",
-    title: { it: "Il perimetro", en: "The perimeter", es: "El perímetro" },
+    title: { it: "Il perimetro", en: "The perimeter", es: "El perímetro", fr: "Le périmètre" },
     body: {
       it: [
         "Nel deep water solo la linea di salita si compone con una superficie mobile. La roccia dà appigli; il mare modifica distanza, suono e orientamento.",
@@ -338,13 +400,18 @@ export const texts: Text[] = [
         "El límite entre agua y roca no es estable. Se desplaza con cada ola y continúa, a través del horizonte, en el límite entre mar y cielo.",
         "El perímetro no cierra un espacio: mide provisionalmente las relaciones que lo atraviesan.",
       ],
+      fr: [
+        "En deep water solo, la ligne d'escalade se compose avec une surface mobile. Le rocher donne des prises ; la mer modifie la distance, le son et l'orientation.",
+        "La limite entre l'eau et le rocher n'est pas stable. Elle se déplace à chaque vague et se poursuit, par l'horizon, dans la limite entre mer et ciel.",
+        "Le périmètre ne referme pas un espace : il mesure provisoirement les relations qui le traversent.",
+      ],
     },
   },
   {
     slug: "linea-dacqua",
     theme: "mare",
     index: "vi",
-    title: { it: "Linea d'acqua", en: "Waterline", es: "Línea de agua" },
+    title: { it: "Linea d'acqua", en: "Waterline", es: "Línea de agua", fr: "Ligne d'eau" },
     body: {
       it: [
         "Una soglia separa due ambienti e permette il passaggio fra loro. La linea d'acqua svolge entrambe le funzioni.",
@@ -361,13 +428,18 @@ export const texts: Text[] = [
         "Al acercarse al mar cambian la fricción, la temperatura, el sonido y la consecuencia de una caída. Cambian así las reglas locales del juego.",
         "La vía permanece en la roca, pero su campo incluye el agua.",
       ],
+      fr: [
+        "Un seuil sépare deux milieux et permet le passage entre eux. La ligne d'eau remplit les deux fonctions.",
+        "À l'approche de la mer changent le frottement, la température, le son et la conséquence d'une chute. Les règles locales du jeu changent avec eux.",
+        "La voie reste sur le rocher, mais son champ comprend l'eau.",
+      ],
     },
   },
   {
     slug: "attrito",
     theme: "roccia",
     index: "vii",
-    title: { it: "Attrito", en: "Friction", es: "Fricción" },
+    title: { it: "Attrito", en: "Friction", es: "Fricción", fr: "Frottement" },
     body: {
       it: [
         "L'attrito è una relazione fra superfici. Varia con l'umidità, la temperatura e la pressione esercitata.",
@@ -384,13 +456,18 @@ export const texts: Text[] = [
         "Estas variaciones alteran las posibilidades de una misma vía. La repetición nunca restituye condiciones idénticas.",
         "Leer la roca significa percibir las reglas locales que surgen en el contacto.",
       ],
+      fr: [
+        "Le frottement est une relation entre surfaces. Il varie avec l'humidité, la température et la pression exercée.",
+        "Ces variations changent les possibilités d'une même voie. La répétition ne restitue jamais des conditions identiques.",
+        "Lire le rocher, c'est percevoir les règles locales qui émergent dans le contact.",
+      ],
     },
   },
   {
     slug: "tracciare",
     theme: "roccia",
     index: "viii",
-    title: { it: "Tracciare", en: "Setting", es: "Equipar" },
+    title: { it: "Tracciare", en: "Setting", es: "Equipar", fr: "Ouvrir la ligne" },
     body: {
       it: [
         "Tracciare significa costruire un sistema di regole per corpi che non si conoscono in anticipo.",
@@ -406,6 +483,11 @@ export const texts: Text[] = [
         "Equipar significa construir un sistema de reglas para cuerpos que no se conocen de antemano.",
         "Una línea dispone presas, distancias y orientaciones sin determinar por completo la solución.",
         "Cuando aparece un gesto imprevisto, el juego muestra una posibilidad que quien equipó no había anticipado.",
+      ],
+      fr: [
+        "Ouvrir une ligne, c'est construire un système de règles pour des corps qu'on ne connaît pas d'avance.",
+        "Une ligne dispose prises, distances et orientations sans déterminer entièrement la solution.",
+        "Quand apparaît un geste imprévu, le jeu montre une possibilité que l'ouvreur n'avait pas anticipée.",
       ],
     },
   },
@@ -452,6 +534,17 @@ export const autografia: Record<
     ],
     close: "Para empezar, escribe dónde escalas, desde cuándo y qué situación quieres observar.",
   },
+  fr: {
+    kicker: "Autographie d'un geste",
+    title: "Une pratique partagée",
+    lead: "Un travail individuel sur l'escalade, construit à partir du corps, de la ligne et des conditions présentes.",
+    body: [
+      "Nous observons comment se composent le poids, les appuis, le regard et le souffle dans une séquence. Le travail part de ce qui arrive, non d'un modèle unique à reproduire.",
+      "Répéter sert à produire des différences perceptibles et à élargir les possibilités de mouvement. Les pas faciles font aussi partie de la pratique.",
+      "Je peux construire des lignes en falaise ou en salle autour d'une question précise apparue pendant le travail.",
+    ],
+    close: "Pour commencer, écris où tu grimpes, depuis combien de temps et quelle situation tu veux observer.",
+  },
 };
 
 /* ------------------------------------------------------------- About ---- */
@@ -496,8 +589,18 @@ export const about: Record<FullLocale, AboutCopy> = {
       { title: "Escalada", body: "Enseño escalada desde hace 26 años y equipo vías desde hace 20. Llevo a este trabajo las preguntas producidas por las otras prácticas, sin convertirlas en un método universal." },
     ],
   },
+  fr: {
+    title: "Qui je suis",
+    intro: "Mon parcours traverse des pratiques du corps, du mouvement, de l'eau, de la philosophie et de l'escalade. Je ne les considère pas comme des méthodes à additionner, mais comme des expériences qui modifient ma façon d'observer un geste.",
+    stages: [
+      { title: "Corps", body: "Je me suis formé comme praticien craniosacral et en Body-Mind Centering, dans les parcours SME pour adultes et IDME pour enfants. J'ai aussi suivi une formation prénatale, en aquaticité du nourrisson et en Watsu." },
+      { title: "Mouvement", body: "J'ai étudié la danse classique et le butô, puis le contact improvisation, l'aïkido, la capoeira, le tai-chi et le tango. Chaque pratique dispose autrement le poids, le rythme, le contact et l'orientation." },
+      { title: "Eau", body: "J'ai pratiqué la danse dans l'eau et l'apnée à la monopalme. Dans l'eau, le soutien, la pression et le souffle changent les règles du mouvement." },
+      { title: "Pensée et dessin", body: "J'ai étudié la philosophie à l'université sans terminer la licence. Je lis et je dessine : deux manières, différentes, de suivre une ligne et de voir comment elle varie." },
+      { title: "Escalade", body: "J'enseigne l'escalade depuis 26 ans et j'ouvre des lignes depuis 20 ans. J'y apporte les questions produites par les autres pratiques, sans les transformer en méthode universelle." },
+    ],
+  },
 };
-
 
 export const contact: Record<FullLocale, { title: string; body: string; hint: string }> = {
   it: {
@@ -515,6 +618,11 @@ export const contact: Record<FullLocale, { title: string; body: string; hint: st
     body: "Un correo, sin fórmulas. Respondo cuando tengo tiempo y atención, normalmente en unos días.",
     hint: "Si escribes para trabajar juntos, dime dónde escalas y desde cuándo.",
   },
+  fr: {
+    title: "Écrire",
+    body: "Un courriel, sans formules. Je réponds quand j'ai du temps et de l'attention, en général sous quelques jours.",
+    hint: "Si tu écris pour travailler ensemble, dis-moi où tu grimpes et depuis quand.",
+  },
 };
 
 export const email = "ilinx@proton.me";
@@ -526,14 +634,14 @@ export const shortPages: Record<(typeof SHORT_LOCALES)[number], { lines: string[
     lines: [
       "Ilinx — 攀岩、教练、定线。",
       "岩石不教什么。身体与岩壁的相遇产生了此前不存在的东西：一个只发生一次的动作。",
-      "此处只有简介。完整的文字见意大利语、英语或西班牙语页面。",
+      "此处只有简介。完整的文字见意大利语、英语、西班牙语或法语页面。",
     ],
   },
   ja: {
     lines: [
       "Ilinx — クライミング、コーチング、ルートセット。",
       "岩は何も教えない。身体と壁の出会いが、それまで存在しなかったものを生む。一度きりの動き。",
-      "ここにあるのは短い紹介だけです。全文はイタリア語・英語・スペイン語のページに。",
+      "ここにあるのは短い紹介だけです。全文はイタリア語・英語・スペイン語・フランス語のページに。",
     ],
   },
 };
@@ -614,5 +722,25 @@ export const rhizome: Record<FullLocale, RhizomeCopy> = {
     cta: "Abrir el plano en Instagram",
     note: "Instagram permanece fuera del sitio: aquí las líneas, allí los injertos cotidianos.",
     sceneCaption: "Roca y agua: dos superficies que se tocan en un mismo umbral.",
+  },
+  fr: {
+    title: "Rhizome",
+    intro:
+      "Une page qui rassemble ce que je publie sur Instagram. Ni journal ni portfolio : un plan où des images brèves entrent en rapport sans hiérarchie.",
+    body: [
+      "Un rhizome n'a pas de point de départ. Chaque image peut se connecter à n'importe quelle autre : une prise, une ligne d'eau, un dessin, une voie. La chronologie n'est qu'une lecture possible.",
+      "Les publications fonctionnent comme des règles locales : de brèves contraintes qui produisent de la variation. Certaines restent isolées, d'autres forment des agencements qui durent des mois.",
+    ],
+    nodesLabel: "Lignes du plan",
+    nodes: [
+      { title: "Mouvement", body: "Fragments de séquences : le poids qui se déplace, des appuis qui changent d'ordre, des répétitions qui produisent des différences." },
+      { title: "Surface", body: "Rocher, eau, sable. La limite comme mesure : là où une surface finit, une autre commence." },
+      { title: "Ouverture", body: "Des lignes construites en falaise et en salle, vues comme des questions posées au corps qui les parcourt." },
+      { title: "Dessin", body: "Traits sur papier : suivre une ligne et voir comment elle varie, sans la décrire." },
+      { title: "Ilinx", body: "Le vertige comme catégorie de jeu : l'instant où la perception ordonnée se déplace." },
+    ],
+    cta: "Ouvrir le plan sur Instagram",
+    note: "Instagram reste à l'extérieur du site : ici les lignes, là-bas les greffes quotidiennes.",
+    sceneCaption: "Rocher et eau : deux surfaces qui se touchent sur un même seuil.",
   },
 };

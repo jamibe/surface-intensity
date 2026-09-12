@@ -1,4 +1,5 @@
 import { createFileRoute, Link, useParams } from "@tanstack/react-router";
+import type { CSSProperties } from "react";
 import {
   autografiaDoor,
   isFullLocale,
@@ -129,7 +130,7 @@ type DoorProps = {
   secretLabel?: string;
 };
 
-function Door({ to, params, image, width, height, name, note, kind, secretLabel }: DoorProps) {
+function Door({ to, params, image, width, height, name, note, kind, veils, secretLabel }: DoorProps) {
   return (
     <article className="door group relative aspect-[16/10] overflow-hidden md:aspect-[21/9]" data-kind={kind}>
       <Link to={to} params={params} className="absolute inset-0 block">
@@ -152,6 +153,14 @@ function Door({ to, params, image, width, height, name, note, kind, secretLabel 
             <span className="drip" style={{ left: "88%", animationDelay: ".15s" }} />
           </>
         )}
+        {veils.map((veil, i) => (
+          <span
+            key={i}
+            aria-hidden="true"
+            className="veil"
+            style={{ ...veil.style, backgroundImage: `url(${veil.src})` }}
+          />
+        ))}
         <span className="reveal absolute inset-x-0 bottom-0 flex flex-col gap-1 bg-gradient-to-t from-background/85 to-transparent p-6 md:p-8">
           <span className="text-3xl tracking-tight md:text-4xl">{name}</span>
           <span className="label">{note}</span>

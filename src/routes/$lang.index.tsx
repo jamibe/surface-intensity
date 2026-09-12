@@ -59,6 +59,34 @@ function ShortPage({ lang }: { lang: "zh" | "ja" }) {
   );
 }
 
+/** Two hidden zones per image: passing over them opens a transparency
+ *  onto another surface of the same landscape. */
+function veilsFor(slug: ThemeSlug): { src: string; style: CSSProperties }[] {
+  const src = (s: ThemeSlug) => themes.find((t) => t.slug === s)!.image;
+  switch (slug) {
+    case "cielo":
+      return [
+        { src: src("mare"), style: { top: "18%", left: "14%", width: "20%", height: "38%" } },
+        { src: src("chioma"), style: { bottom: "8%", left: "52%", width: "22%", height: "40%" } },
+      ];
+    case "chioma":
+      return [
+        { src: src("roccia"), style: { top: "22%", left: "8%", width: "18%", height: "36%" } },
+        { src: src("cielo"), style: { bottom: "12%", right: "16%", width: "20%", height: "38%" } },
+      ];
+    case "mare":
+      return [
+        { src: src("roccia"), style: { top: "26%", left: "26%", width: "18%", height: "34%" } },
+        { src: src("cielo"), style: { top: "10%", right: "10%", width: "22%", height: "42%" } },
+      ];
+    default:
+      return [
+        { src: src("mare"), style: { bottom: "14%", left: "18%", width: "20%", height: "36%" } },
+        { src: src("chioma"), style: { top: "12%", right: "22%", width: "18%", height: "34%" } },
+      ];
+  }
+}
+
 function FullHome({ lang }: { lang: FullLocale }) {
   return (
     <main>
@@ -76,6 +104,7 @@ function FullHome({ lang }: { lang: FullLocale }) {
               name={theme.name[lang]}
               note={theme.note[lang]}
               kind={theme.door}
+              veils={veilsFor(theme.slug)}
               {...(theme.slug === "cielo" ? { secretLabel: autografiaDoor.name[lang] } : {})}
             />
           ))}
@@ -96,6 +125,7 @@ type DoorProps = {
   name: string;
   note: string;
   kind: "sky" | "canopy" | "water" | "rain" | "stars";
+  veils: { src: string; style: CSSProperties }[];
   secretLabel?: string;
 };
 

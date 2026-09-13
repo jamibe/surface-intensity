@@ -1,6 +1,15 @@
 import { createFileRoute, Link, redirect, useParams } from "@tanstack/react-router";
-import { autografia, autografiaDoor, email, isFullLocale, ui, type FullLocale } from "@/lib/content";
+import {
+  autografia,
+  autografiaDoor,
+  email,
+  emberLabel,
+  isFullLocale,
+  ui,
+  type FullLocale,
+} from "@/lib/content";
 import { SiteFooter, SiteHeader } from "@/components/site";
+import { EmberSky } from "@/components/ember-sky";
 import sabbiaOnde from "@/assets/sabbia-onde.jpg";
 
 export const Route = createFileRoute("/$lang/autografia")({

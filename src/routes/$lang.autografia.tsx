@@ -54,6 +54,7 @@ function AutografiaPage() {
           <span className="star" style={{ top: "26%", left: "24%" }} />
           <span className="star" style={{ top: "44%", left: "58%" }} />
           <span className="star" style={{ top: "64%", left: "38%" }} />
+          <EmberSky label={emberLabel[lang]} />
         </div>
 
         <div className="mx-auto max-w-[1180px] px-6 pt-20 pb-8">

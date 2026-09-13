@@ -1,6 +1,15 @@
 import { createFileRoute, Link, redirect, useParams } from "@tanstack/react-router";
-import { autografia, autografiaDoor, email, isFullLocale, ui, type FullLocale } from "@/lib/content";
+import {
+  autografia,
+  autografiaDoor,
+  email,
+  emberLabel,
+  isFullLocale,
+  ui,
+  type FullLocale,
+} from "@/lib/content";
 import { SiteFooter, SiteHeader } from "@/components/site";
+import { EmberSky } from "@/components/ember-sky";
 import sabbiaOnde from "@/assets/sabbia-onde.jpg";
 
 export const Route = createFileRoute("/$lang/autografia")({
@@ -45,6 +54,7 @@ function AutografiaPage() {
           <span className="star" style={{ top: "26%", left: "24%" }} />
           <span className="star" style={{ top: "44%", left: "58%" }} />
           <span className="star" style={{ top: "64%", left: "38%" }} />
+          <EmberSky label={emberLabel[lang]} />
         </div>
 
         <div className="mx-auto max-w-[1180px] px-6 pt-20 pb-8">

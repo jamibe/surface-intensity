@@ -1,5 +1,5 @@
 import { createFileRoute, redirect, useParams, Link } from "@tanstack/react-router";
-import { isFullLocale, rhizome, instagramHandle, instagramUrl, type FullLocale } from "@/lib/content";
+import { isFullLocale, rhizome, type FullLocale } from "@/lib/content";
 import { SiteFooter, SiteHeader } from "@/components/site";
 import onde from "@/assets/sabbia-onde.jpg";
 
@@ -108,14 +108,6 @@ function RhizomePage() {
           </ul>
 
           <div className="mt-16 flex flex-wrap items-baseline gap-x-8 gap-y-3">
-            <a
-              href={instagramUrl}
-              target="_blank"
-              rel="me noreferrer"
-              className="story-link text-2xl tracking-tight"
-            >
-              {page.cta} — @{instagramHandle}
-            </a>
             <Link to="/$lang/contatto" params={{ lang }} className="label hover:text-foreground">
               {page.note}
             </Link>

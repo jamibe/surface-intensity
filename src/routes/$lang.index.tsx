@@ -60,31 +60,32 @@ function ShortPage({ lang }: { lang: "zh" | "ja" }) {
   );
 }
 
-/** Two hidden zones per image: passing over them opens a transparency
- *  onto another surface of the same landscape. */
-function veilsFor(slug: ThemeSlug): { src: string; style: CSSProperties }[] {
-  const src = (s: ThemeSlug) => themes.find((t) => t.slug === s)!.image;
+/** Position of the hidden black hole and the hidden autografia zone for each door. */
+function hiddenZones(slug: ThemeSlug): {
+  hole: CSSProperties;
+  autografia: CSSProperties;
+} {
   switch (slug) {
     case "cielo":
-      return [
-        { src: src("mare"), style: { top: "18%", left: "14%", width: "20%", height: "38%" } },
-        { src: src("chioma"), style: { bottom: "8%", left: "52%", width: "22%", height: "40%" } },
-      ];
+      return {
+        hole: { top: "16%", left: "62%", width: "14%", height: "22%" },
+        autografia: { top: "12%", right: "8%", width: "20%", height: "28%" },
+      };
     case "chioma":
-      return [
-        { src: src("roccia"), style: { top: "22%", left: "8%", width: "18%", height: "36%" } },
-        { src: src("cielo"), style: { bottom: "12%", right: "16%", width: "20%", height: "38%" } },
-      ];
+      return {
+        hole: { top: "30%", left: "12%", width: "12%", height: "20%" },
+        autografia: { bottom: "14%", left: "48%", width: "18%", height: "26%" },
+      };
     case "mare":
-      return [
-        { src: src("roccia"), style: { top: "26%", left: "26%", width: "18%", height: "34%" } },
-        { src: src("cielo"), style: { top: "10%", right: "10%", width: "22%", height: "42%" } },
-      ];
+      return {
+        hole: { top: "22%", left: "28%", width: "14%", height: "20%" },
+        autografia: { top: "10%", right: "12%", width: "18%", height: "26%" },
+      };
     default:
-      return [
-        { src: src("mare"), style: { bottom: "14%", left: "18%", width: "20%", height: "36%" } },
-        { src: src("chioma"), style: { top: "12%", right: "22%", width: "18%", height: "34%" } },
-      ];
+      return {
+        hole: { bottom: "18%", left: "16%", width: "12%", height: "20%" },
+        autografia: { top: "14%", right: "20%", width: "16%", height: "24%" },
+      };
   }
 }
 
@@ -105,8 +106,9 @@ function FullHome({ lang }: { lang: FullLocale }) {
               name={theme.name[lang]}
               note={theme.note[lang]}
               kind={theme.door}
-              veils={veilsFor(theme.slug)}
-              {...(theme.slug === "cielo" ? { secretLabel: autografiaDoor.name[lang] } : {})}
+              zones={hiddenZones(theme.slug)}
+              lang={lang}
+              secretLabel={autografiaDoor.name[lang]}
             />
           ))}
         </div>
@@ -125,12 +127,13 @@ type DoorProps = {
   height: number;
   name: string;
   note: string;
-  kind: "sky" | "canopy" | "water" | "rain" | "stars";
-  veils: { src: string; style: CSSProperties }[];
-  secretLabel?: string;
+  kind: "sky" | "canopy" | "water" | "rain";
+  zones: { hole: CSSProperties; autografia: CSSProperties };
+  lang: FullLocale;
+  secretLabel: string;
 };
 
-function Door({ to, params, image, width, height, name, note, kind, veils, secretLabel }: DoorProps) {
+function Door({ to, params, image, width, height, name, note, kind, zones, lang, secretLabel }: DoorProps) {
   return (
     <article className="door group relative aspect-[16/10] overflow-hidden md:aspect-[21/9]" data-kind={kind}>
       <Link to={to} params={params} className="absolute inset-0 block">
@@ -153,33 +156,31 @@ function Door({ to, params, image, width, height, name, note, kind, veils, secre
             <span className="drip" style={{ left: "88%", animationDelay: ".15s" }} />
           </>
         )}
-        {veils.map((veil, i) => (
-          <span
-            key={i}
-            aria-hidden="true"
-            className="veil"
-            style={{ ...veil.style, backgroundImage: `url(${veil.src})` }}
-          />
-        ))}
         <span className="reveal absolute inset-x-0 bottom-0 flex flex-col gap-1 bg-gradient-to-t from-background/85 to-transparent p-6 md:p-8">
           <span className="text-3xl tracking-tight md:text-4xl">{name}</span>
           <span className="label">{note}</span>
         </span>
       </Link>
-      {secretLabel && (
-        <Link
-          to="/$lang/autografia"
-          params={{ lang: params.lang }}
-          aria-label={secretLabel}
-          className="hidden-constellation absolute top-[12%] right-[8%] z-10 h-24 w-32 focus-visible:opacity-100"
-        >
-          <span className="constellation-star constellation-star-a" />
-          <span className="constellation-star constellation-star-b" />
-          <span className="constellation-star constellation-star-c" />
-          <span className="constellation-thread" />
-          <span className="sr-only">{secretLabel}</span>
-        </Link>
-      )}
+      {/* Hidden black hole — links to Kenoma, the void necessary for play */}
+      <Link
+        to="/$lang/kenoma"
+        params={{ lang }}
+        aria-label="Kenoma"
+        className="black-hole absolute z-10 focus-visible:opacity-1"
+        style={zones.hole}
+      >
+        <span className="sr-only">Kenoma</span>
+      </Link>
+      {/* Hidden autografia zone — links to Autografia di un gesto */}
+      <Link
+        to="/$lang/autografia"
+        params={{ lang }}
+        aria-label={secretLabel}
+        className="autografia-zone absolute z-10 focus-visible:opacity-1"
+        style={zones.autografia}
+      >
+        <span className="sr-only">{secretLabel}</span>
+      </Link>
     </article>
   );
 }

@@ -3,13 +3,11 @@ import {
   autografia,
   autografiaDoor,
   email,
-  emberLabel,
   isFullLocale,
   ui,
   type FullLocale,
 } from "@/lib/content";
 import { SiteFooter, SiteHeader } from "@/components/site";
-import { EmberSky } from "@/components/ember-sky";
 import sabbiaOnde from "@/assets/sabbia-onde.jpg";
 
 export const Route = createFileRoute("/$lang/autografia")({
@@ -54,7 +52,16 @@ function AutografiaPage() {
           <span className="star" style={{ top: "26%", left: "24%" }} />
           <span className="star" style={{ top: "44%", left: "58%" }} />
           <span className="star" style={{ top: "64%", left: "38%" }} />
-          <EmberSky label={emberLabel[lang]} />
+          {/* Hidden black hole on the night sky — black on black, only the cursor finds it */}
+          <Link
+            to="/$lang/kenoma"
+            params={{ lang }}
+            aria-label="Kenoma"
+            className="black-hole absolute z-10 focus-visible:opacity-1"
+            style={{ top: "30%", left: "40%", width: "16%", height: "24%" }}
+          >
+            <span className="sr-only">Kenoma</span>
+          </Link>
         </div>
 
         <div className="mx-auto max-w-[1180px] px-6 pt-20 pb-8">

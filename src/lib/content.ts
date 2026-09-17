@@ -239,12 +239,7 @@ export const autografiaDoor = {
   } as T3,
 };
 
-export const emberLabel: T3 = {
-  it: "Un fuoco compare nel cielo notturno mentre la pagina scorre.",
-  en: "A fire appears in the night sky as the page scrolls.",
-  es: "Un fuego aparece en el cielo nocturno mientras la página se desplaza.",
-  fr: "Un feu apparaît dans le ciel nocturne à mesure que la page défile.",
-};
+
 
 /* ------------------------------------------------------------- Texts ---- */
 
@@ -648,16 +643,12 @@ export const shortPages: Record<(typeof SHORT_LOCALES)[number], { lines: string[
 
 /* ------------------------------------------------ Rizoma / Instagram ---- */
 
-export const instagramHandle = "ilinx";
-export const instagramUrl = `https://instagram.com/${instagramHandle}`;
-
 type RhizomeCopy = {
   title: string;
   intro: string;
   body: string[];
   nodesLabel: string;
   nodes: { title: string; body: string }[];
-  cta: string;
   note: string;
   sceneCaption: string;
 };
@@ -666,7 +657,7 @@ export const rhizome: Record<FullLocale, RhizomeCopy> = {
   it: {
     title: "Rizoma",
     intro:
-      "Una pagina che raccoglie ciò che pubblico su Instagram. Non è un diario né un portfolio: è un piano dove immagini brevi entrano in rapporto senza gerarchia.",
+      "Una pagina che raccoglie immagini e pratiche. Non è un diario né un portfolio: è un piano dove frammenti brevi entrano in rapporto senza gerarchia.",
     body: [
       "Un rizoma non ha un punto d'inizio. Ogni immagine può essere collegata a qualunque altra: una presa, una linea d'acqua, un disegno, un tracciato. La sequenza cronologica è solo una delle letture possibili.",
       "Le pubblicazioni funzionano come regole locali: brevi vincoli che producono variazione. Alcune restano isolate, altre formano concatenamenti che durano mesi.",
@@ -679,14 +670,13 @@ export const rhizome: Record<FullLocale, RhizomeCopy> = {
       { title: "Disegno", body: "Segni su carta: seguire una linea e vedere come varia, senza descriverla." },
       { title: "Ilinx", body: "Vertigine come categoria di gioco: il momento in cui la percezione ordinata si sposta." },
     ],
-    cta: "Apri il piano su Instagram",
-    note: "Instagram resta esterno al sito: qui trovi le linee, là gli innesti quotidiani.",
+    note: "Il piano resta aperto: le linee sono qui, gli innesti quotidiani altrove.",
     sceneCaption: "Roccia e acqua: due superfici che si toccano su una stessa soglia.",
   },
   en: {
     title: "Rhizome",
     intro:
-      "A page gathering what I publish on Instagram. Not a diary, not a portfolio: a plane where short images enter into relation without hierarchy.",
+      "A page gathering images and practices. Not a diary, not a portfolio: a plane where brief fragments enter into relation without hierarchy.",
     body: [
       "A rhizome has no starting point. Any image can connect to any other: a hold, a waterline, a drawing, a route. Chronology is only one possible reading.",
       "Posts work as local rules: brief constraints producing variation. Some stay isolated, others form assemblages lasting months.",
@@ -699,14 +689,13 @@ export const rhizome: Record<FullLocale, RhizomeCopy> = {
       { title: "Drawing", body: "Marks on paper: following a line and seeing how it varies, without describing it." },
       { title: "Ilinx", body: "Vertigo as a category of play: the moment ordered perception shifts." },
     ],
-    cta: "Open the plane on Instagram",
-    note: "Instagram stays outside the site: the lines are here, the daily grafts are there.",
+    note: "The plane stays open: the lines are here, the daily grafts elsewhere.",
     sceneCaption: "Rock and water: two surfaces touching along one threshold.",
   },
   es: {
     title: "Rizoma",
     intro:
-      "Una página que reúne lo que publico en Instagram. No es un diario ni un portafolio: es un plano donde imágenes breves entran en relación sin jerarquía.",
+      "Una página que reúne imágenes y prácticas. No es un diario ni un portafolio: es un plano donde fragmentos breves entran en relación sin jerarquía.",
     body: [
       "Un rizoma no tiene punto de inicio. Cada imagen puede conectarse con cualquier otra: una presa, una línea de agua, un dibujo, una vía. La cronología es solo una lectura posible.",
       "Las publicaciones funcionan como reglas locales: vínculos breves que producen variación. Algunas quedan aisladas, otras forman agenciamientos que duran meses.",
@@ -719,14 +708,13 @@ export const rhizome: Record<FullLocale, RhizomeCopy> = {
       { title: "Dibujo", body: "Trazos sobre papel: seguir una línea y ver cómo varía, sin describirla." },
       { title: "Ilinx", body: "El vértigo como categoría de juego: el instante en que la percepción ordenada se desplaza." },
     ],
-    cta: "Abrir el plano en Instagram",
-    note: "Instagram permanece fuera del sitio: aquí las líneas, allí los injertos cotidianos.",
+    note: "El plano permanece abierto: las líneas aquí, los injertos cotidianos en otra parte.",
     sceneCaption: "Roca y agua: dos superficies que se tocan en un mismo umbral.",
   },
   fr: {
     title: "Rhizome",
     intro:
-      "Une page qui rassemble ce que je publie sur Instagram. Ni journal ni portfolio : un plan où des images brèves entrent en rapport sans hiérarchie.",
+      "Une page qui rassemble images et pratiques. Ni journal ni portfolio : un plan où des fragments brefs entrent en rapport sans hiérarchie.",
     body: [
       "Un rhizome n'a pas de point de départ. Chaque image peut se connecter à n'importe quelle autre : une prise, une ligne d'eau, un dessin, une voie. La chronologie n'est qu'une lecture possible.",
       "Les publications fonctionnent comme des règles locales : de brèves contraintes qui produisent de la variation. Certaines restent isolées, d'autres forment des agencements qui durent des mois.",
@@ -739,8 +727,28 @@ export const rhizome: Record<FullLocale, RhizomeCopy> = {
       { title: "Dessin", body: "Traits sur papier : suivre une ligne et voir comment elle varie, sans la décrire." },
       { title: "Ilinx", body: "Le vertige comme catégorie de jeu : l'instant où la perception ordonnée se déplace." },
     ],
-    cta: "Ouvrir le plan sur Instagram",
-    note: "Instagram reste à l'extérieur du site : ici les lignes, là-bas les greffes quotidiennes.",
+    note: "Le plan reste ouvert : les lignes sont ici, les greffes quotidiennes ailleurs.",
     sceneCaption: "Rocher et eau : deux surfaces qui se touchent sur un même seuil.",
+  },
+};
+
+/* ------------------------------------------------------------- Kenoma ---- */
+
+export const kenoma: Record<FullLocale, { title: string; body: string }> = {
+  it: {
+    title: "Kenoma",
+    body: "Il vuoto necessario. La casella vuota che rende possibile il gioco: senza di essa nessun movimento, nessuna combinazione, nessun vertigine.",
+  },
+  en: {
+    title: "Kenoma",
+    body: "The necessary void. The empty tile that makes play possible: without it no movement, no combination, no vertigo.",
+  },
+  es: {
+    title: "Kenoma",
+    body: "El vacío necesario. La casilla vacía que hace posible el juego: sin ella ningún movimiento, ninguna combinación, ningún vértigo.",
+  },
+  fr: {
+    title: "Kenoma",
+    body: "Le vide nécessaire. La case vide qui rend le jeu possible : sans elle nul mouvement, nulle combinaison, nul vertige.",
   },
 };
